@@ -3,813 +3,677 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Respiratech | Proyecto Institucional</title>
+  <title>RespiraTech | Proyecto institucional</title>
   <style>
     :root {
-      --verde-oscuro: #245c36;
-      --verde: #4f8f47;
-      --verde-claro: #a8d48b;
-      --beige: #f4ead7;
-      --arena: #d8b884;
-      --cafe: #8a5a32;
-      --cielo: #9edbea;
-      --azul: #4aa7bc;
-      --texto: #243126;
-      --blanco: #fffaf2;
-      --sombra: 0 12px 35px rgba(36, 92, 54, 0.18);
-      --radio: 24px;
+      --bg: #f4efe6;
+      --bg-soft: #fbf7ef;
+      --ink: #1f2a22;
+      --muted: #657166;
+      --green-900: #173f2a;
+      --green-800: #245c36;
+      --green-600: #4f8f47;
+      --green-300: #b8d99d;
+      --sky: #9edbea;
+      --blue: #4aa7bc;
+      --sand: #d8b884;
+      --brown: #8a5a32;
+      --wall-e: #f4c542;
+      --danger: #bf3f3f;
+      --radius-xl: 32px;
+      --radius-lg: 24px;
+      --radius-md: 16px;
+      --shadow: 0 24px 70px rgba(23, 63, 42, .18);
+      --shadow-soft: 0 12px 30px rgba(23, 63, 42, .12);
+      --max: 1180px;
     }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
     body {
-      font-family: "Segoe UI", Arial, sans-serif;
-      color: var(--texto);
+      font-family: "Segoe UI", system-ui, sans-serif;
+      color: var(--ink);
       background:
-        radial-gradient(circle at top left, rgba(158, 219, 234, 0.35), transparent 32%),
-        radial-gradient(circle at bottom right, rgba(168, 212, 139, 0.35), transparent 28%),
-        var(--blanco);
+        radial-gradient(circle at 8% 8%, rgba(158, 219, 234, .38), transparent 28%),
+        radial-gradient(circle at 90% 12%, rgba(184, 217, 157, .34), transparent 26%),
+        linear-gradient(180deg, #fffaf2, var(--bg));
       line-height: 1.6;
+      overflow-x: hidden;
     }
+    img, video { max-width: 100%; display: block; }
+    a { color: inherit; }
 
-    header {
+    .site-header {
       position: sticky;
       top: 0;
-      z-index: 20;
-      background: rgba(255, 250, 242, 0.92);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(36, 92, 54, 0.15);
+      z-index: 50;
+      backdrop-filter: blur(14px);
+      background: rgba(251, 247, 239, .88);
+      border-bottom: 1px solid rgba(23, 63, 42, .12);
     }
-
-    nav {
-      width: min(1180px, 92%);
+    .nav {
+      width: min(var(--max), 92%);
       margin: auto;
       display: flex;
-      justify-content: space-between;
       align-items: center;
+      justify-content: space-between;
+      gap: 16px;
       padding: 14px 0;
-      gap: 20px;
     }
-
-    .logo {
+    .brand {
       display: flex;
       align-items: center;
-      gap: 12px;
-      font-weight: 900;
-      color: var(--verde-oscuro);
-      letter-spacing: 1px;
+      gap: 10px;
+      font-weight: 1000;
+      letter-spacing: .08em;
+      color: var(--green-900);
       text-transform: uppercase;
     }
-
-    .logo span {
+    .brand-mark {
       width: 42px;
       height: 42px;
+      border-radius: 16px;
       display: grid;
       place-items: center;
-      border-radius: 50%;
-      background: linear-gradient(145deg, var(--verde-claro), var(--cielo));
-      box-shadow: var(--sombra);
+      background: linear-gradient(145deg, var(--green-300), var(--sky));
+      box-shadow: var(--shadow-soft);
     }
-
-    .menu {
+    .nav-links {
       display: flex;
       flex-wrap: wrap;
       justify-content: flex-end;
-      gap: 10px;
+      gap: 8px;
       list-style: none;
     }
-
-    .menu a {
-      color: var(--verde-oscuro);
+    .nav-links a {
       text-decoration: none;
-      font-weight: 700;
-      padding: 8px 12px;
+      font-weight: 800;
+      color: var(--green-900);
+      padding: 9px 12px;
       border-radius: 999px;
     }
+    .nav-links a:hover, .nav-links a.active { background: rgba(184, 217, 157, .36); }
 
-    .menu a:hover {
-      background: rgba(168, 212, 139, 0.35);
-    }
-
-    section {
-      width: min(1180px, 92%);
-      margin: auto;
-      padding: 76px 0;
-    }
-
-    .hero {
-      display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
-      gap: 36px;
-      align-items: center;
-      min-height: 82vh;
-    }
-
-    .pill {
+    .wrap { width: min(var(--max), 92%); margin: auto; }
+    section { padding: 74px 0; }
+    .eyebrow {
       display: inline-flex;
       align-items: center;
       gap: 8px;
+      background: rgba(184, 217, 157, .36);
+      color: var(--green-900);
       padding: 8px 14px;
       border-radius: 999px;
-      background: rgba(168, 212, 139, 0.34);
-      color: var(--verde-oscuro);
-      font-weight: 800;
+      font-weight: 900;
       margin-bottom: 18px;
     }
-
+    h1, h2, h3 { color: var(--green-900); line-height: 1.04; }
     h1 {
-      font-size: clamp(3rem, 9vw, 7.8rem);
-      line-height: 0.9;
-      color: var(--verde-oscuro);
+      font-size: clamp(3.2rem, 10vw, 8.2rem);
       text-transform: uppercase;
-      letter-spacing: 2px;
-      text-shadow: 3px 3px 0 rgba(79, 143, 71, 0.22);
-      margin-bottom: 20px;
-    }
-
-    h2 {
-      font-size: clamp(2rem, 4vw, 3.6rem);
-      color: var(--verde-oscuro);
-      line-height: 1.05;
+      letter-spacing: .02em;
+      text-shadow: 4px 4px 0 rgba(79, 143, 71, .18);
       margin-bottom: 18px;
     }
+    h2 { font-size: clamp(2rem, 4.4vw, 4rem); margin-bottom: 18px; }
+    h3 { font-size: 1.35rem; margin-bottom: 10px; }
+    p { color: var(--muted); }
+    .lead { font-size: 1.14rem; max-width: 760px; color: #3f4e41; }
 
-    h3 {
-      color: var(--verde-oscuro);
-      font-size: 1.35rem;
-      margin-bottom: 10px;
+    .hero {
+      min-height: calc(100vh - 72px);
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      align-items: center;
+      gap: 34px;
+      padding: 58px 0 74px;
     }
-
-    .hero p {
-      font-size: 1.15rem;
-      max-width: 720px;
-      margin-bottom: 24px;
-    }
-
-    .botones {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
-    }
-
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 24px; }
     .btn {
-      display: inline-block;
-      text-decoration: none;
+      appearance: none;
       border: none;
       cursor: pointer;
-      padding: 13px 20px;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
       border-radius: 999px;
-      font-weight: 900;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      padding: 13px 18px;
+      font-weight: 1000;
+      transition: transform .2s ease, box-shadow .2s ease;
     }
+    .btn:hover { transform: translateY(-2px); box-shadow: var(--shadow-soft); }
+    .btn-primary { background: var(--green-900); color: white; }
+    .btn-light { background: white; color: var(--green-900); border: 1px solid rgba(23, 63, 42, .16); }
 
-    .btn:hover {
-      transform: translateY(-2px);
-      box-shadow: var(--sombra);
-    }
-
-    .btn-primary {
-      background: var(--verde-oscuro);
-      color: white;
-    }
-
-    .btn-secondary {
-      background: white;
-      color: var(--verde-oscuro);
-      border: 2px solid rgba(36, 92, 54, 0.25);
-    }
-
-    .mascota-card {
+    .hero-visual {
       position: relative;
-      background: linear-gradient(180deg, #ffffff, var(--beige));
-      border: 1px solid rgba(36, 92, 54, 0.14);
-      border-radius: 32px;
-      padding: 22px;
-      box-shadow: var(--sombra);
-      text-align: center;
-      overflow: hidden;
-    }
-
-    .mascota-card::before,
-    .mascota-card::after {
-      content: "";
-      position: absolute;
-      border-radius: 50%;
-      opacity: 0.28;
-    }
-
-    .mascota-card::before {
-      width: 180px;
-      height: 180px;
-      background: var(--cielo);
-      top: -70px;
-      right: -50px;
-    }
-
-    .mascota-card::after {
-      width: 130px;
-      height: 130px;
-      background: var(--verde-claro);
-      bottom: -60px;
-      left: -35px;
-    }
-
-    .mascota-card img {
-      position: relative;
-      z-index: 2;
-      width: min(100%, 390px);
-      border-radius: 26px;
-    }
-
-    .mascota-card strong {
-      position: relative;
-      z-index: 3;
-      display: block;
-      color: var(--verde-oscuro);
-      margin-top: 10px;
-      font-size: 1.3rem;
-    }
-
-    .grid-3,
-    .grid-4 {
-      display: grid;
-      gap: 20px;
-    }
-
-    .grid-3 {
-      grid-template-columns: repeat(3, 1fr);
-    }
-
-    .grid-4 {
-      grid-template-columns: repeat(4, 1fr);
-    }
-
-    .card {
-      background: rgba(255, 255, 255, 0.78);
-      border: 1px solid rgba(36, 92, 54, 0.14);
-      border-radius: var(--radio);
+      border-radius: var(--radius-xl);
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.88), rgba(244,234,215,.92));
+      box-shadow: var(--shadow);
       padding: 24px;
-      box-shadow: 0 8px 24px rgba(36, 92, 54, 0.10);
-    }
-
-    .card-icon {
-      width: 56px;
-      height: 56px;
+      overflow: hidden;
+      min-height: 520px;
       display: grid;
       place-items: center;
-      font-size: 1.8rem;
-      border-radius: 18px;
-      background: linear-gradient(145deg, rgba(168, 212, 139, 0.55), rgba(158, 219, 234, 0.55));
+      border: 1px solid rgba(23, 63, 42, .12);
+    }
+    .hero-visual::before,
+    .hero-visual::after {
+      content: "";
+      position: absolute;
+      border-radius: 999px;
+      opacity: .34;
+    }
+    .hero-visual::before { width: 260px; height: 260px; background: var(--sky); top: -90px; right: -70px; }
+    .hero-visual::after { width: 220px; height: 220px; background: var(--green-300); bottom: -100px; left: -80px; }
+    .hero-visual img { position: relative; z-index: 2; border-radius: 24px; width: min(100%, 420px); object-fit: contain; }
+    .floating-card {
+      position: absolute;
+      z-index: 3;
+      left: 20px;
+      bottom: 20px;
+      max-width: 280px;
+      background: rgba(255,255,255,.9);
+      border: 1px solid rgba(23, 63, 42, .12);
+      border-radius: 20px;
+      padding: 16px;
+      box-shadow: var(--shadow-soft);
+    }
+    .floating-card strong { display: block; color: var(--green-900); margin-bottom: 4px; }
+
+    .stats-grid, .project-grid, .feature-grid, .media-grid { display: grid; gap: 18px; }
+    .stats-grid { grid-template-columns: repeat(4, 1fr); }
+    .feature-grid { grid-template-columns: repeat(3, 1fr); }
+    .project-grid { grid-template-columns: repeat(4, 1fr); }
+    .media-grid { grid-template-columns: repeat(3, 1fr); }
+
+    .card {
+      background: rgba(255,255,255,.78);
+      border: 1px solid rgba(23, 63, 42, .12);
+      border-radius: var(--radius-lg);
+      padding: 22px;
+      box-shadow: var(--shadow-soft);
+    }
+    .stat-card {
+      background: var(--green-900);
+      color: white;
+      border-radius: var(--radius-lg);
+      padding: 22px;
+      box-shadow: var(--shadow-soft);
+      min-height: 150px;
+    }
+    .stat-card strong { display: block; font-size: 3rem; line-height: 1; color: white; }
+    .stat-card span { color: rgba(255,255,255,.86); font-weight: 700; }
+
+    .method-card { position: relative; overflow: hidden; min-height: 245px; }
+    .method-card b {
+      display: inline-grid;
+      place-items: center;
+      width: 48px;
+      height: 48px;
+      border-radius: 16px;
+      background: var(--green-900);
+      color: white;
       margin-bottom: 14px;
     }
-
-    .frase {
-      background: var(--verde-oscuro);
-      color: white;
-      border-radius: 34px;
-      padding: 42px;
-      box-shadow: var(--sombra);
-    }
-
-    .frase h2,
-    .frase h3 {
-      color: white;
-    }
-
-    .frase p {
-      color: rgba(255,255,255,0.9);
-    }
-
-    .metodologia {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-      counter-reset: fase;
-    }
-
-    .fase {
-      position: relative;
-      overflow: hidden;
-    }
-
-    .fase::before {
-      counter-increment: fase;
-      content: "0" counter(fase);
+    .method-card::after {
+      content: attr(data-step);
       position: absolute;
       right: 18px;
-      top: 8px;
-      font-size: 4.3rem;
-      font-weight: 900;
-      color: rgba(79, 143, 71, 0.12);
+      bottom: -26px;
+      font-size: 8rem;
+      font-weight: 1000;
+      color: rgba(23, 63, 42, .08);
+      line-height: 1;
     }
 
-    .tabs {
+    .section-head {
       display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-bottom: 22px;
-    }
-
-    .tab-btn {
-      border: 2px solid rgba(36, 92, 54, 0.18);
-      background: white;
-      color: var(--verde-oscuro);
-      border-radius: 999px;
-      padding: 11px 16px;
-      font-weight: 900;
-      cursor: pointer;
-    }
-
-    .tab-btn.active {
-      background: var(--verde-oscuro);
-      color: white;
-    }
-
-    .tab-panel {
-      display: none;
-      animation: aparecer 0.35s ease;
-    }
-
-    .tab-panel.active {
-      display: block;
-    }
-
-    @keyframes aparecer {
-      from { opacity: 0; transform: translateY(8px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    .project-layout {
-      display: grid;
-      grid-template-columns: 0.75fr 1.25fr;
-      gap: 20px;
-      align-items: stretch;
-    }
-
-    .project-badge {
-      min-height: 240px;
-      border-radius: var(--radio);
-      padding: 24px;
-      color: white;
-      background: linear-gradient(145deg, var(--verde-oscuro), var(--verde));
-      display: flex;
-      flex-direction: column;
+      align-items: flex-end;
       justify-content: space-between;
-      box-shadow: var(--sombra);
+      gap: 20px;
+      margin-bottom: 24px;
     }
+    .section-head p { max-width: 640px; }
 
-    .project-badge .emoji {
-      font-size: 4rem;
+    .project-card {
+      position: relative;
+      min-height: 330px;
+      overflow: hidden;
+      border-radius: 28px;
+      padding: 22px;
+      cursor: pointer;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid rgba(255,255,255,.38);
+      background: linear-gradient(145deg, var(--green-800), var(--green-600));
+      color: white;
+      transition: transform .2s ease, box-shadow .2s ease;
     }
-
-    .project-badge h3 {
-      color: #ffffff;
-      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.22);
+    .project-card:hover { transform: translateY(-5px); box-shadow: var(--shadow); }
+    .project-card h3 { color: white; text-shadow: 0 2px 8px rgba(0,0,0,.22); }
+    .project-card p { color: rgba(255,255,255,.9); }
+    .project-card .emoji { font-size: 3rem; margin-bottom: 14px; }
+    .project-card .tag {
+      display: inline-flex;
+      background: rgba(255,255,255,.9);
+      color: var(--green-900);
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-size: .82rem;
+      font-weight: 1000;
+      margin-bottom: 12px;
     }
-
-    .project-badge p {
-      color: rgba(255, 255, 255, 0.94);
-      opacity: 1;
+    .project-card .bottom {
+      position: absolute;
+      left: 22px;
+      right: 22px;
+      bottom: 22px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      color: white;
+      font-weight: 900;
     }
+    .project-card.yellow { background: linear-gradient(145deg, #2d2b20, #7b6721 48%, #c79c19); }
+    .project-card.blue { background: linear-gradient(145deg, #183f49, var(--blue)); }
+    .project-card.red { background: linear-gradient(145deg, #4c251e, #a64c33); }
 
-    .project-badge .tag {
-      background: rgba(255, 255, 255, 0.88);
-      color: var(--verde-oscuro);
-      border: 1px solid rgba(255, 255, 255, 0.45);
+    .project-detail {
+      display: none;
+      margin-top: 20px;
+      border-radius: var(--radius-xl);
+      background: rgba(255,255,255,.84);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      border: 1px solid rgba(23, 63, 42, .12);
     }
-
-    .datos {
+    .project-detail.active { display: block; animation: reveal .25s ease; }
+    @keyframes reveal { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+    .detail-hero {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      padding: 24px;
+      background: linear-gradient(145deg, rgba(23,63,42,.96), rgba(79,143,71,.92));
+      color: white;
+    }
+    .detail-hero h3 { color: white; font-size: clamp(1.8rem, 3vw, 3rem); }
+    .detail-hero p { color: rgba(255,255,255,.9); }
+    .detail-meta {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+    .meta-box {
+      background: rgba(255,255,255,.12);
+      border: 1px solid rgba(255,255,255,.20);
+      border-radius: 18px;
+      padding: 14px;
+    }
+    .meta-box strong { display: block; color: white; }
+    .detail-body { padding: 24px; }
+    .info-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 16px;
-      margin-top: 16px;
+      margin-bottom: 24px;
     }
-
-    .dato {
-      background: rgba(244, 234, 215, 0.68);
-      border-radius: 18px;
-      padding: 16px;
-      border: 1px solid rgba(138, 90, 50, 0.10);
+    .info-box {
+      background: var(--bg-soft);
+      border: 1px solid rgba(23, 63, 42, .1);
+      border-radius: 20px;
+      padding: 18px;
     }
-
-    .dato strong {
+    .info-box strong {
       display: block;
-      color: var(--cafe);
-      margin-bottom: 6px;
+      color: var(--brown);
       text-transform: uppercase;
-      font-size: 0.8rem;
-      letter-spacing: 0.08em;
+      letter-spacing: .08em;
+      font-size: .8rem;
+      margin-bottom: 8px;
     }
 
-    .placeholder {
-      border: 2px dashed rgba(36, 92, 54, 0.28);
-      background: rgba(255, 255, 255, 0.55);
+    .gallery-block { margin-top: 24px; }
+    .gallery-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 14px;
     }
-
-    .carousel-wrap {
-      position: relative;
-    }
-
-    .carousel {
-      display: grid;
-      grid-auto-flow: column;
-      grid-auto-columns: minmax(270px, 1fr);
-      overflow-x: auto;
-      gap: 18px;
-      padding: 6px 4px 18px;
-      scroll-snap-type: x mandatory;
-    }
-
-    .carousel .card {
-      scroll-snap-align: start;
-      min-height: 260px;
-    }
-
-    .tag {
-      display: inline-block;
-      background: rgba(158, 219, 234, 0.35);
-      color: var(--verde-oscuro);
-      padding: 6px 10px;
+    .gallery-tab {
+      border: 1px solid rgba(23, 63, 42, .12);
+      background: white;
+      color: var(--green-900);
       border-radius: 999px;
+      padding: 9px 12px;
+      font-weight: 900;
+      cursor: pointer;
+    }
+    .gallery-tab.active { background: var(--green-900); color: white; }
+    .gallery-section { display: none; }
+    .gallery-section.active { display: block; }
+    .media-card {
+      position: relative;
+      overflow: hidden;
+      border-radius: 22px;
+      background: #e7decf;
+      min-height: 240px;
+      border: 1px solid rgba(23, 63, 42, .12);
+      cursor: pointer;
+    }
+    .media-card img, .media-card video {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      transition: transform .25s ease;
+    }
+    .media-card:hover img { transform: scale(1.04); }
+    .media-caption {
+      position: absolute;
+      inset: auto 10px 10px 10px;
+      background: rgba(23, 63, 42, .86);
+      color: white;
+      border-radius: 16px;
+      padding: 10px;
+      font-size: .92rem;
       font-weight: 800;
-      font-size: 0.85rem;
-      margin-bottom: 12px;
     }
-
-    .timeline {
+    .empty-media {
+      min-height: 250px;
       display: grid;
-      gap: 16px;
+      place-items: center;
+      text-align: center;
+      padding: 20px;
+      color: var(--muted);
+      background: repeating-linear-gradient(135deg, rgba(23,63,42,.05), rgba(23,63,42,.05) 10px, rgba(255,255,255,.45) 10px, rgba(255,255,255,.45) 20px);
     }
 
-    .step {
+    .timeline { display: grid; gap: 14px; }
+    .timeline-item {
       display: grid;
       grid-template-columns: 72px 1fr;
       gap: 16px;
       align-items: start;
     }
-
-    .step-number {
+    .timeline-number {
       width: 56px;
       height: 56px;
       border-radius: 18px;
-      background: var(--verde-oscuro);
+      background: var(--green-900);
       color: white;
       display: grid;
       place-items: center;
-      font-weight: 900;
+      font-weight: 1000;
+    }
+
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      z-index: 100;
+      background: rgba(11, 20, 14, .88);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 22px;
+    }
+    .lightbox.active { display: flex; }
+    .lightbox-content {
+      width: min(1000px, 96vw);
+      max-height: 92vh;
+      border-radius: 24px;
+      overflow: hidden;
+      background: #111;
+      box-shadow: 0 30px 90px rgba(0,0,0,.45);
+      position: relative;
+    }
+    .lightbox img, .lightbox video { width: 100%; max-height: 82vh; object-fit: contain; background: #111; }
+    .lightbox-caption { background: white; color: var(--ink); padding: 14px 18px; font-weight: 800; }
+    .lightbox-close {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      z-index: 2;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      border: none;
+      cursor: pointer;
+      background: rgba(255,255,255,.9);
+      font-size: 1.4rem;
+      font-weight: 1000;
     }
 
     footer {
-      background: var(--verde-oscuro);
+      background: var(--green-900);
       color: white;
-      margin-top: 50px;
+      margin-top: 54px;
     }
+    footer .wrap { padding: 34px 0; }
+    footer h3 { color: white; }
+    footer p { color: rgba(255,255,255,.82); }
 
-    footer section {
-      padding: 36px 0;
+    @media (max-width: 1000px) {
+      .hero, .detail-hero { grid-template-columns: 1fr; }
+      .project-grid, .stats-grid { grid-template-columns: repeat(2, 1fr); }
+      .feature-grid, .media-grid { grid-template-columns: 1fr 1fr; }
+      .hero-visual { min-height: 420px; }
     }
-
-    footer p {
-      opacity: 0.9;
-    }
-
-    @media (max-width: 920px) {
-      .hero,
-      .project-layout,
-      .grid-3,
-      .grid-4,
-      .metodologia {
-        grid-template-columns: 1fr;
-      }
-
-      nav {
-        align-items: flex-start;
-        flex-direction: column;
-      }
-
-      .menu {
-        justify-content: flex-start;
-      }
-
-      section {
-        padding: 54px 0;
-      }
-
-      .datos {
-        grid-template-columns: 1fr;
-      }
+    @media (max-width: 700px) {
+      .nav { align-items: flex-start; flex-direction: column; }
+      .nav-links { justify-content: flex-start; }
+      section { padding: 54px 0; }
+      .project-grid, .stats-grid, .feature-grid, .media-grid, .info-grid, .detail-meta { grid-template-columns: 1fr; }
+      .hero { padding-top: 36px; }
+      .floating-card { position: relative; left: auto; bottom: auto; margin-top: 14px; max-width: none; }
+      .timeline-item { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
-  <header>
-    <nav aria-label="Navegación principal">
-      <div class="logo"><span>🌿</span> Respiratech</div>
-      <ul class="menu">
+  <header class="site-header">
+    <nav class="nav">
+      <div class="brand"><span class="brand-mark">🌿</span> RespiraTech</div>
+      <ul class="nav-links">
         <li><a href="#inicio">Inicio</a></li>
-        <li><a href="#proyecto">Proyecto</a></li>
         <li><a href="#metodologia">Metodología</a></li>
-        <li><a href="#grados">Grados</a></li>
+        <li><a href="#proyectos">Proyectos</a></li>
         <li><a href="#evidencias">Evidencias</a></li>
       </ul>
     </nav>
   </header>
 
   <main id="inicio">
-    <section class="hero">
+    <div class="wrap hero">
       <div>
-        <div class="pill">🌬️ Proyecto institucional · Escuela Normal Miguel F. Martínez</div>
-        <h1>Respiratech</h1>
-        <p>
-          Un proyecto institucional orientado al cuidado del aire, la conciencia ambiental y la creación de prototipos STEAM en la escuela primaria.
-          La página reúne los proyectos desarrollados por normalistas en distintos grados y muestra cómo cada grupo propuso una solución a partir de su contexto.
-        </p>
-        <div class="botones">
-          <a class="btn btn-primary" href="#grados">Ver proyectos por grado</a>
-          <a class="btn btn-secondary" href="#proyecto">Conocer el propósito</a>
+        <span class="eyebrow">🌬️ Proyecto institucional · Escuela Normal Miguel F. Martínez</span>
+        <h1>RespiraTech</h1>
+        <p class="lead">Una experiencia educativa para investigar la calidad del aire, crear prototipos STEAM y compartir soluciones con la comunidad escolar. Cada grado desarrolló una propuesta distinta para comprender, cuidar y comunicar la importancia del aire limpio.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#proyectos">Explorar proyectos</a>
+          <a class="btn btn-light" href="#evidencias">Ver evidencias</a>
         </div>
       </div>
-
-      <aside class="mascota-card" aria-label="Mascota Respiratech">
-        <!-- Cambia el nombre del archivo si la imagen está en otra carpeta -->
-        <img src="mascota-respiratech.png" alt="Ariel, mascota de Respiratech, guardián del aire" />
-        <strong>Ariel · Guardián del aire</strong>
+      <aside class="hero-visual">
+        <img src="assets/mascota/ariel-principal.png" alt="Ariel, guardián del aire" />
+        <div class="floating-card">
+          <strong>Ariel · Guardián del aire</strong>
+          <p>La mascota acompaña la misión: observar, investigar y cuidar el aire que respiramos.</p>
+        </div>
       </aside>
-    </section>
-
-    <section id="proyecto">
-      <div class="frase">
-        <h2>¿Qué es Respiratech?</h2>
-        <p>
-          Respiratech es una propuesta institucional que busca resolver una problemática de la comunidad: el cuidado del aire y la mala calidad del aire en la zona metropolitana.
-          Para lograrlo, se integra la metodología ABPC con el enfoque ABI-STEAM, de modo que los estudiantes investiguen, analicen datos, diseñen prototipos y comuniquen acciones de mejora.
-        </p>
-      </div>
-    </section>
+    </div>
 
     <section>
-      <div class="grid-3">
-        <article class="card">
-          <div class="card-icon">🎯</div>
-          <h3>Propósito institucional</h3>
-          <p>
-            Fortalecer la reflexión sobre el cuidado del medio ambiente mediante proyectos centrados en la contaminación del aire y en el diseño de prototipos útiles para la comunidad escolar.
-          </p>
-        </article>
-        <article class="card">
-          <div class="card-icon">🧪</div>
-          <h3>Enfoque STEAM</h3>
-          <p>
-            Los grupos integran ciencia, tecnología, ingeniería, arte y matemáticas para investigar el problema, registrar evidencias y construir soluciones visibles.
-          </p>
-        </article>
-        <article class="card">
-          <div class="card-icon">🏫</div>
-          <h3>Participantes</h3>
-          <p>
-            En la escuela participan 8 normalistas: 3 en primer grado, 1 en segundo, 1 en tercero y 3 en cuarto grado.
-          </p>
-        </article>
+      <div class="wrap stats-grid">
+        <article class="stat-card"><strong>8</strong><span>normalistas participantes</span></article>
+        <article class="stat-card"><strong>4</strong><span>grados con proyectos</span></article>
+        <article class="stat-card"><strong>4</strong><span>prototipos principales</span></article>
+        <article class="stat-card"><strong>1</strong><span>misión: cuidar el aire</span></article>
       </div>
     </section>
 
     <section id="metodologia">
-      <h2>Metodología del proyecto</h2>
-      <div class="metodologia">
-        <article class="card fase">
-          <h3>Fase 1 · Planeación</h3>
-          <p>
-            Se identifica la problemática, se delimita la pregunta guía, se organizan equipos y roles, se diseñan instrumentos y se define el prototipo.
-          </p>
-        </article>
-        <article class="card fase">
-          <h3>Fase 2 · Acción</h3>
-          <p>
-            Se analizan evidencias, se interpretan hallazgos y se diseña un prototipo o producto STEAM pertinente para el contexto escolar.
-          </p>
-        </article>
-        <article class="card fase">
-          <h3>Fase 3 · Intervención</h3>
-          <p>
-            Se aplica la propuesta, se socializan resultados en formato de feria o exposición y se evalúa el impacto con evidencias antes y después.
-          </p>
-        </article>
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">ABPC / ABI-STEAM</span>
+            <h2>Metodología del proyecto</h2>
+          </div>
+          <p>El proyecto integra investigación, acción, prototipado, comunicación y socialización de evidencias para fortalecer el aprendizaje situado.</p>
+        </div>
+        <div class="feature-grid">
+          <article class="card method-card" data-step="01"><b>1</b><h3>Planeación</h3><p>Se identifica la problemática, se recuperan saberes previos, se delimitan preguntas guía y se organizan rutas de trabajo.</p></article>
+          <article class="card method-card" data-step="02"><b>2</b><h3>Acción</h3><p>Los estudiantes investigan, registran información, experimentan, diseñan y construyen prototipos vinculados con la calidad del aire.</p></article>
+          <article class="card method-card" data-step="03"><b>3</b><h3>Intervención</h3><p>Se presentan productos, se comunican hallazgos, se socializan evidencias y se proponen acciones para la comunidad escolar.</p></article>
+        </div>
       </div>
     </section>
 
-    <section id="grados">
-      <h2>Proyectos por grado</h2>
-      <p style="max-width: 850px; margin-bottom: 22px;">
-        Selecciona un grado para revisar la problemática, propósito, producto y desarrollo del proyecto. Los apartados de segundo y cuarto grado quedan preparados para completar cuando se reciba su información.
-      </p>
+    <section id="proyectos">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">Proyectos por grado</span>
+            <h2>Una escuela, cuatro rutas para cuidar el aire</h2>
+          </div>
+          <p>Selecciona una tarjeta para abrir el apartado del grado. Cada proyecto cuenta con espacio para problemática, propósito, proceso, producto, fotos y videos.</p>
+        </div>
 
-      <div class="tabs" role="tablist" aria-label="Proyectos por grado">
-        <button class="tab-btn active" data-tab="primero" type="button">1.º grado</button>
-        <button class="tab-btn" data-tab="segundo" type="button">2.º grado</button>
-        <button class="tab-btn" data-tab="tercero" type="button">3.º grado</button>
-        <button class="tab-btn" data-tab="cuarto" type="button">4.º grado</button>
+        <div class="project-grid">
+          <article class="project-card" data-project="g1"><span class="tag">1.º grado</span><div class="emoji">🌱</div><h3>Guardianes del Aire</h3><p>Jardín vertical y plantas purificadoras para el aula.</p><div class="bottom"><span>Ver proyecto</span><span>→</span></div></article>
+          <article class="project-card blue" data-project="g2"><span class="tag">2.º grado</span><div class="emoji">🪴</div><h3>Pequeños guardianes</h3><p>Purificadores de plantas con materiales reciclables.</p><div class="bottom"><span>Ver proyecto</span><span>→</span></div></article>
+          <article class="project-card red" data-project="g3"><span class="tag">3.º grado</span><div class="emoji">🚦</div><h3>Semáforo del aire</h3><p>Prototipo para comunicar la calidad del aire con colores.</p><div class="bottom"><span>Ver proyecto</span><span>→</span></div></article>
+          <article class="project-card yellow" data-project="g4"><span class="tag">4.º grado</span><div class="emoji">🤖</div><h3>Wall-e al rescate</h3><p>Robot que riega una planta purificadora con energía solar.</p><div class="bottom"><span>Ver proyecto</span><span>→</span></div></article>
+        </div>
+
+        <article class="project-detail active" id="g1">
+          <div class="detail-hero"><div><span class="eyebrow">1.º grado · ABPC</span><h3>Guardianes del Aire: Proyecto RespiraTEC</h3><p>El alumnado identificó contaminantes invisibles y construyó un jardín de plantas para favorecer la conciencia ambiental.</p></div><div class="detail-meta"><div class="meta-box"><strong>Producto</strong><span>Jardín vertical</span></div><div class="meta-box"><strong>Participantes</strong><span>3 normalistas</span></div><div class="meta-box"><strong>Escenario</strong><span>Aula y escuela</span></div><div class="meta-box"><strong>Estado</strong><span>Con información base</span></div></div></div>
+          <div class="detail-body"><div class="info-grid"><div class="info-box"><strong>Problemática</strong><p>La presencia de polvo y contaminantes invisibles en el aire de la escuela afecta la salud de los alumnos, quienes desconocen cómo identificar y mejorar la calidad del aire en su salón.</p></div><div class="info-box"><strong>Propósito</strong><p>Fomentar la conciencia ambiental mediante la investigación científica y la creación de un prototipo de jardín de plantas que purifique el aire del aula.</p></div><div class="info-box"><strong>Cómo se trabajó</strong><p>El grupo exploró la presencia del aire, realizó muestras de polvo, observó plantas, decoró macetas y participó en la construcción del jardín vertical.</p></div><div class="info-box"><strong>Producto final</strong><p>Jardín vertical con plantas purificadoras y evidencias de investigación adaptadas al nivel de primer grado.</p></div></div><div class="gallery-block" data-gallery="g1"><h3>Galería de primer grado</h3><div class="gallery-tabs"><button class="gallery-tab active" data-type="construccion">Construcción</button><button class="gallery-tab" data-type="exposicion">Exposición</button><button class="gallery-tab" data-type="videos">Videos</button></div><div class="gallery-section active" data-type="construccion"><div class="media-grid"><div class="media-card"><img src="assets/grado1/construccion-01.jpg" alt="Construcción del jardín vertical"><span class="media-caption">Construcción del jardín vertical</span></div><div class="media-card empty-media">Espacio para más fotos de proceso</div><div class="media-card empty-media">Espacio para evidencia del aula</div></div></div><div class="gallery-section" data-type="exposicion"><div class="media-grid"><div class="media-card empty-media">Fotos de exposición de 1.º grado</div><div class="media-card empty-media">Producto terminado</div><div class="media-card empty-media">Participación del alumnado</div></div></div><div class="gallery-section" data-type="videos"><div class="media-grid"><div class="media-card empty-media">Video de presentación</div><div class="media-card empty-media">Video de explicación</div></div></div></div></div>
+        </article>
+
+        <article class="project-detail" id="g2">
+          <div class="detail-hero"><div><span class="eyebrow">2.º grado · ABI-STEAM</span><h3>RespiraTech: Pequeños guardianes del aire</h3><p>El alumnado investigó plantas purificadoras y elaboró un prototipo ecológico con materiales reciclables y foami moldeable.</p></div><div class="detail-meta"><div class="meta-box"><strong>Producto</strong><span>Purificadores de plantas</span></div><div class="meta-box"><strong>Participantes</strong><span>1 normalista</span></div><div class="meta-box"><strong>Grupo</strong><span>2.º A</span></div><div class="meta-box"><strong>Estado</strong><span>Con información completa</span></div></div></div>
+          <div class="detail-body"><div class="info-grid"><div class="info-box"><strong>Problemática</strong><p>Existe poco conocimiento sobre las plantas que ayudan a purificar el aire y su importancia para el cuidado del medio ambiente.</p></div><div class="info-box"><strong>Propósito</strong><p>Investigar plantas que contribuyen a la purificación del aire, analizar su importancia y elaborar un prototipo ecológico llamado RespiraTech.</p></div><div class="info-box"><strong>Cómo se trabajó</strong><p>Se observaron videos de Ariel, se investigaron plantas purificadoras, se elaboraron bocetos, se clasificaron materiales reciclables y se representaron plantas mediante producciones artísticas.</p></div><div class="info-box"><strong>Producto final</strong><p>Purificador ecológico con materiales reciclables, foami moldeable y comunicación oral/escrita sobre el cuidado del aire.</p></div></div><div class="gallery-block" data-gallery="g2"><h3>Galería de segundo grado</h3><div class="gallery-tabs"><button class="gallery-tab active" data-type="construccion">Construcción</button><button class="gallery-tab" data-type="exposicion">Exposición</button><button class="gallery-tab" data-type="videos">Videos</button></div><div class="gallery-section active" data-type="construccion"><div class="media-grid"><div class="media-card empty-media">Proceso de purificadores</div><div class="media-card empty-media">Bocetos y materiales</div><div class="media-card empty-media">Foami y plantas</div></div></div><div class="gallery-section" data-type="exposicion"><div class="media-grid"><div class="media-card empty-media">Fotos de exposición</div><div class="media-card empty-media">Producto terminado</div></div></div><div class="gallery-section" data-type="videos"><div class="media-grid"><div class="media-card empty-media">Video del alumnado</div></div></div></div></div>
+        </article>
+
+        <article class="project-detail" id="g3">
+          <div class="detail-hero"><div><span class="eyebrow">3.º grado · ABPC + STEAM</span><h3>RespiraTech: Semáforo de calidad del aire</h3><p>Un semáforo físico comunica si el aire está en verde, amarillo o rojo, apoyándose en un instrumento real de detección usado por el docente normalista.</p></div><div class="detail-meta"><div class="meta-box"><strong>Producto</strong><span>Semáforo del aire</span></div><div class="meta-box"><strong>Participantes</strong><span>1 normalista</span></div><div class="meta-box"><strong>Grupo</strong><span>3.º A</span></div><div class="meta-box"><strong>Estado</strong><span>Con evidencias</span></div></div></div>
+          <div class="detail-body"><div class="info-grid"><div class="info-box"><strong>Problemática</strong><p>En la zona metropolitana de Monterrey la calidad del aire suele empeorar por actividades humanas y condiciones del entorno; esto también afecta a las y los estudiantes.</p></div><div class="info-box"><strong>Propósito</strong><p>Que el alumnado indague causas, consecuencias y acciones para mejorar o cuidar el aire, y desarrolle un prototipo STEAM: un semáforo de calidad del aire.</p></div><div class="info-box"><strong>Cómo se trabajó</strong><p>Se investigaron causas y consecuencias, se acordaron reglas para los colores del semáforo, se diseñó el prototipo y se relacionó con lecturas reales del instrumento docente.</p></div><div class="info-box"><strong>Producto final</strong><p>Semáforo con sistema de engranaje que los alumnos giran según el resultado del detector de calidad del aire.</p></div></div><div class="gallery-block" data-gallery="g3"><h3>Galería de tercer grado</h3><div class="gallery-tabs"><button class="gallery-tab active" data-type="construccion">Construcción</button><button class="gallery-tab" data-type="exposicion">Exposición</button><button class="gallery-tab" data-type="videos">Videos</button></div><div class="gallery-section active" data-type="construccion"><div class="media-grid"><div class="media-card"><img src="assets/grado3/exposicion-01.jpg" alt="Exposición del semáforo de calidad del aire"><span class="media-caption">Exposición del semáforo de calidad del aire</span></div><div class="media-card"><img src="assets/grado3/prototipo-01.jpg" alt="Prototipo del semáforo"><span class="media-caption">Prototipo del semáforo</span></div><div class="media-card empty-media">Más fotos del proceso</div></div></div><div class="gallery-section" data-type="exposicion"><div class="media-grid"><div class="media-card"><img src="assets/grado3/exposicion-02.jpg" alt="Alumnado presentando el proyecto"><span class="media-caption">Alumnado presentando el proyecto</span></div><div class="media-card empty-media">Carteles y fichas</div><div class="media-card empty-media">Demostración del detector</div></div></div><div class="gallery-section" data-type="videos"><div class="media-grid"><div class="media-card empty-media">Video de explicación del semáforo</div><div class="media-card empty-media">Video de exposición del grupo</div></div></div></div></div>
+        </article>
+
+        <article class="project-detail" id="g4">
+          <div class="detail-hero"><div><span class="eyebrow">4.º grado · ABI-STEAM</span><h3>Wall-e y su planta al rescate</h3><p>El alumnado construyó un robot con mecanismo de riego para una planta purificadora de aire, alimentado con energía solar.</p></div><div class="detail-meta"><div class="meta-box"><strong>Producto</strong><span>Robot regador solar</span></div><div class="meta-box"><strong>Participantes</strong><span>3 normalistas</span></div><div class="meta-box"><strong>Grado</strong><span>4.º grado</span></div><div class="meta-box"><strong>Estado</strong><span>Con evidencias</span></div></div></div>
+          <div class="detail-body"><div class="info-grid"><div class="info-box"><strong>Problemática</strong><p>La calidad del aire en el área metropolitana ha avanzado a niveles preocupantes, amenazando la salud de los estudiantes.</p></div><div class="info-box"><strong>Propósito</strong><p>Construir un robot con un mecanismo que riegue una planta purificadora de aire, alimentado con energía solar, para fortalecer habilidades matemáticas, botánicas y artísticas.</p></div><div class="info-box"><strong>Cómo se trabajó</strong><p>Se introdujo la problemática, se investigaron alternativas con plantas, se organizaron materiales, se diseñó el robot y se vinculó el prototipo con energía solar.</p></div><div class="info-box"><strong>Producto final</strong><p>Robot inspirado en Wall-e que cuida una planta purificadora y representa una solución creativa ante la mala calidad del aire.</p></div></div><div class="gallery-block" data-gallery="g4"><h3>Galería de cuarto grado</h3><div class="gallery-tabs"><button class="gallery-tab active" data-type="construccion">Construcción</button><button class="gallery-tab" data-type="exposicion">Exposición</button><button class="gallery-tab" data-type="videos">Videos</button></div><div class="gallery-section active" data-type="construccion"><div class="media-grid"><div class="media-card"><img src="assets/grado4/arbol-stand-01.jpg" alt="Decoración de árbol para el stand"><span class="media-caption">Ambientación del stand</span></div><div class="media-card"><img src="assets/grado4/walle-01.jpg" alt="Prototipo de Wall-e y planta al rescate"><span class="media-caption">Prototipo Wall-e</span></div><div class="media-card empty-media">Proceso de construcción</div></div></div><div class="gallery-section" data-type="exposicion"><div class="media-grid"><div class="media-card"><img src="assets/grado4/stand-01.jpg" alt="Presentación del proyecto de cuarto grado"><span class="media-caption">Presentación del proyecto</span></div><div class="media-card empty-media">Alumnado explicando</div><div class="media-card empty-media">Producto terminado</div></div></div><div class="gallery-section" data-type="videos"><div class="media-grid"><div class="media-card empty-media">Video de Wall-e funcionando</div><div class="media-card empty-media">Video de explicación</div></div></div></div></div>
+        </article>
       </div>
-
-      <article id="primero" class="tab-panel active">
-        <div class="project-layout">
-          <div class="project-badge">
-            <div>
-              <div class="emoji">🌱</div>
-              <h3>Jardín vertical</h3>
-              <p>Proyecto aplicado por 3 normalistas en grupos de primer grado.</p>
-            </div>
-            <span class="tag">Conciencia ambiental</span>
-          </div>
-          <div class="card">
-            <h3>Primer grado · Jardín de plantas purificadoras</h3>
-            <div class="datos">
-              <div class="dato">
-                <strong>Problemática</strong>
-                <p>La presencia de polvo y contaminantes invisibles en el aire de la escuela que afectan la salud de los alumnos, quienes desconocen cómo identificar y mejorar la calidad del aire en su salón.</p>
-              </div>
-              <div class="dato">
-                <strong>Propósito</strong>
-                <p>Fomentar la conciencia ambiental en los alumnos a través de la investigación científica y la creación de un prototipo de jardín de plantas que purifique el aire de su aula.</p>
-              </div>
-              <div class="dato">
-                <strong>Producto</strong>
-                <p>Jardín vertical o jardín de plantas con función de purificación y sensibilización ambiental dentro del aula.</p>
-              </div>
-              <div class="dato">
-                <strong>Cómo se hizo</strong>
-                <p>Espacio reservado para integrar pasos, evidencias, fotografías, materiales utilizados y resultados observados por cada normalista.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </article>
-
-      <article id="segundo" class="tab-panel">
-        <div class="project-layout">
-          <div class="project-badge">
-            <div>
-              <div class="emoji">🪴</div>
-              <h3>Purificadores de plantas</h3>
-              <p>Proyecto aplicado por 1 normalista en un grupo de segundo grado.</p>
-            </div>
-            <span class="tag">Información pendiente</span>
-          </div>
-          <div class="card placeholder">
-            <h3>Segundo grado · Purificadores de plantas</h3>
-            <p>
-              Este apartado queda preparado para completar cuando se reciba la problemática, el propósito, el desarrollo, las evidencias y los resultados del proyecto.
-            </p>
-          </div>
-        </div>
-      </article>
-
-      <article id="tercero" class="tab-panel">
-        <div class="project-layout">
-          <div class="project-badge">
-            <div>
-              <div class="emoji">🚦</div>
-              <h3>Semáforo de calidad del aire</h3>
-              <p>Proyecto aplicado por 1 normalista en un grupo de tercer grado.</p>
-            </div>
-            <span class="tag">Sensor + prototipo manual</span>
-          </div>
-          <div class="card">
-            <h3>Tercer grado · Semáforo de calidad del aire</h3>
-            <div class="datos">
-              <div class="dato">
-                <strong>Problemática</strong>
-                <p>En la zona metropolitana de Monterrey la calidad del aire suele empeorar por actividades humanas y condiciones del entorno; esto también afecta a las y los estudiantes.</p>
-              </div>
-              <div class="dato">
-                <strong>Propósito</strong>
-                <p>Que el alumnado indague causas, consecuencias y acciones para mejorar o cuidar el aire, y desarrolle un prototipo STEAM: un semáforo de calidad del aire.</p>
-              </div>
-              <div class="dato">
-                <strong>Producto</strong>
-                <p>Semáforo que cambia de color con un sistema de engranaje. Los alumnos giran el semáforo según el resultado señalado por un instrumento real de detección de calidad del aire usado por el docente normalista.</p>
-              </div>
-              <div class="dato">
-                <strong>Cómo se hizo</strong>
-                <p>Se investigaron causas y consecuencias de la mala calidad del aire, se revisaron acciones de cuidado, se diseñó el semáforo y se utilizó un instrumento del docente para relacionar datos reales con colores de alerta.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </article>
-
-      <article id="cuarto" class="tab-panel">
-        <div class="project-layout">
-          <div class="project-badge">
-            <div>
-              <div class="emoji">☀️</div>
-              <h3>Regador solar</h3>
-              <p>Proyecto aplicado por 3 normalistas en grupos de cuarto grado.</p>
-            </div>
-            <span class="tag">Información pendiente</span>
-          </div>
-          <div class="card placeholder">
-            <h3>Cuarto grado · Regador de planta purificadora de aire con energía solar</h3>
-            <p>
-              Este apartado queda preparado para completar cuando se reciba la problemática, propósito, materiales, proceso de construcción, evidencias y resultados de los tres grupos de cuarto grado.
-            </p>
-          </div>
-        </div>
-      </article>
     </section>
 
     <section id="evidencias">
-      <h2>Carrusel general de productos</h2>
-      <div class="carousel-wrap">
-        <div class="carousel" aria-label="Carrusel de proyectos">
-          <article class="card">
-            <span class="tag">1.º grado</span>
-            <h3>Jardín vertical</h3>
-            <p>Prototipo vegetal para sensibilizar sobre la purificación del aire dentro del aula.</p>
-          </article>
-          <article class="card">
-            <span class="tag">2.º grado</span>
-            <h3>Purificadores de plantas</h3>
-            <p>Espacio preparado para agregar información del proyecto cuando sea enviada.</p>
-          </article>
-          <article class="card">
-            <span class="tag">3.º grado</span>
-            <h3>Semáforo de calidad del aire</h3>
-            <p>Prototipo con sistema de engranaje que comunica el estado del aire mediante colores.</p>
-          </article>
-          <article class="card">
-            <span class="tag">4.º grado</span>
-            <h3>Regador solar</h3>
-            <p>Regador de planta purificadora de aire con energía solar. Información pendiente.</p>
-          </article>
+      <div class="wrap">
+        <div class="section-head"><div><span class="eyebrow">Banco multimedia</span><h2>Evidencias del proceso y exposición</h2></div><p>Esta sección funciona como una galería general para fotos, dibujos de Ariel, prototipos, stands y videos. Las imágenes se pueden abrir en grande.</p></div>
+        <div class="media-grid">
+          <div class="media-card"><img src="assets/mascota/ariel-wall-e.png" alt="Dibujo de Ariel con Wall-e"><span class="media-caption">Ariel acompañando a Wall-e</span></div>
+          <div class="media-card"><img src="assets/mascota/ariel-expresiones.png" alt="Expresiones de Ariel"><span class="media-caption">Expresiones de Ariel</span></div>
+          <div class="media-card"><img src="assets/grado4/walle-01.jpg" alt="Prototipo Wall-e"><span class="media-caption">Prototipo Wall-e</span></div>
+          <div class="media-card"><img src="assets/grado3/exposicion-02.jpg" alt="Semáforo del aire"><span class="media-caption">Semáforo del aire</span></div>
+          <div class="media-card empty-media">Video general de RespiraTech</div>
+          <div class="media-card empty-media">Más evidencias por agregar</div>
         </div>
       </div>
     </section>
 
     <section>
-      <h2>Ruta de exposición</h2>
-      <div class="timeline">
-        <div class="step">
-          <div class="step-number">1</div>
-          <div class="card">
-            <h3>Presentación del problema</h3>
-            <p>Se explica por qué la calidad del aire es una situación relevante para la comunidad escolar.</p>
-          </div>
-        </div>
-        <div class="step">
-          <div class="step-number">2</div>
-          <div class="card">
-            <h3>Investigación y evidencias</h3>
-            <p>Los estudiantes recuperan información, observaciones, registros o datos para comprender la problemática.</p>
-          </div>
-        </div>
-        <div class="step">
-          <div class="step-number">3</div>
-          <div class="card">
-            <h3>Diseño del prototipo</h3>
-            <p>Cada grado desarrolla un producto STEAM relacionado con el cuidado o comunicación de la calidad del aire.</p>
-          </div>
-        </div>
-        <div class="step">
-          <div class="step-number">4</div>
-          <div class="card">
-            <h3>Socialización</h3>
-            <p>Los proyectos se presentan en formato de página, feria, exposición o video para compartir resultados con la comunidad.</p>
-          </div>
+      <div class="wrap">
+        <div class="section-head"><div><span class="eyebrow">Ruta de navegación</span><h2>Cómo se presentará el sitio</h2></div></div>
+        <div class="timeline">
+          <div class="timeline-item"><div class="timeline-number">1</div><article class="card"><h3>Inicio institucional</h3><p>Presenta RespiraTech, su propósito, la mascota Ariel y la distribución de normalistas.</p></article></div>
+          <div class="timeline-item"><div class="timeline-number">2</div><article class="card"><h3>Proyectos por grado</h3><p>Permite explorar cada proyecto con información resumida, producto y proceso.</p></article></div>
+          <div class="timeline-item"><div class="timeline-number">3</div><article class="card"><h3>Galerías y videos</h3><p>Organiza evidencias de construcción, exposición y explicación del alumnado.</p></article></div>
+          <div class="timeline-item"><div class="timeline-number">4</div><article class="card"><h3>Socialización</h3><p>Funciona como página pública para feria, Google Sites o GitHub Pages.</p></article></div>
         </div>
       </div>
     </section>
   </main>
 
-  <footer>
-    <section>
-      <h3>Respiratech · Proyectando sueños</h3>
-      <p>“La tierra no es una herencia de nuestros padres, sino un préstamo de nuestros hijos.”</p>
-      <p>Proyecto institucional · Febrero - Julio · ABPC / ABI-STEAM</p>
-    </section>
-  </footer>
+  <footer><div class="wrap"><h3>RespiraTech · Proyectando sueños</h3><p>Proyecto institucional orientado al cuidado del aire, la investigación escolar y la creación de prototipos STEAM.</p></div></footer>
+
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <div class="lightbox-content">
+      <button class="lightbox-close" type="button" aria-label="Cerrar">×</button>
+      <div id="lightboxMedia"></div>
+      <div class="lightbox-caption" id="lightboxCaption"></div>
+    </div>
+  </div>
 
   <script>
-    const buttons = document.querySelectorAll('.tab-btn');
-    const panels = document.querySelectorAll('.tab-panel');
+    const projectCards = document.querySelectorAll('.project-card');
+    const projectDetails = document.querySelectorAll('.project-detail');
 
-    buttons.forEach((button) => {
-      button.addEventListener('click', () => {
-        const tab = button.dataset.tab;
-
-        buttons.forEach((btn) => btn.classList.remove('active'));
-        panels.forEach((panel) => panel.classList.remove('active'));
-
-        button.classList.add('active');
-        document.getElementById(tab).classList.add('active');
+    projectCards.forEach(card => {
+      card.addEventListener('click', () => {
+        const target = card.dataset.project;
+        projectDetails.forEach(detail => detail.classList.remove('active'));
+        document.getElementById(target).classList.add('active');
+        document.getElementById(target).scrollIntoView({ behavior: 'smooth', block: 'start' });
       });
+    });
+
+    document.querySelectorAll('.gallery-block').forEach(block => {
+      const tabs = block.querySelectorAll('.gallery-tab');
+      const sections = block.querySelectorAll('.gallery-section');
+      tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+          const type = tab.dataset.type;
+          tabs.forEach(t => t.classList.remove('active'));
+          sections.forEach(s => s.classList.remove('active'));
+          tab.classList.add('active');
+          block.querySelector(`.gallery-section[data-type="${type}"]`).classList.add('active');
+        });
+      });
+    });
+
+    const lightbox = document.getElementById('lightbox');
+    const lightboxMedia = document.getElementById('lightboxMedia');
+    const lightboxCaption = document.getElementById('lightboxCaption');
+    const closeLightbox = document.querySelector('.lightbox-close');
+
+    document.querySelectorAll('.media-card img, .media-card video').forEach(media => {
+      media.addEventListener('click', () => {
+        const caption = media.parentElement.querySelector('.media-caption')?.textContent || media.alt || 'Evidencia RespiraTech';
+        lightboxMedia.innerHTML = '';
+        if (media.tagName.toLowerCase() === 'video') {
+          const video = document.createElement('video');
+          video.src = media.currentSrc || media.src;
+          video.controls = true;
+          video.autoplay = true;
+          lightboxMedia.appendChild(video);
+        } else {
+          const img = document.createElement('img');
+          img.src = media.currentSrc || media.src;
+          img.alt = caption;
+          lightboxMedia.appendChild(img);
+        }
+        lightboxCaption.textContent = caption;
+        lightbox.classList.add('active');
+        lightbox.setAttribute('aria-hidden', 'false');
+      });
+    });
+
+    function closeViewer() {
+      lightbox.classList.remove('active');
+      lightbox.setAttribute('aria-hidden', 'true');
+      lightboxMedia.innerHTML = '';
+    }
+
+    closeLightbox.addEventListener('click', closeViewer);
+    lightbox.addEventListener('click', (event) => {
+      if (event.target === lightbox) closeViewer();
+    });
+    window.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') closeViewer();
     });
   </script>
 </body>
