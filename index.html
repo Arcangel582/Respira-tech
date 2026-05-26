@@ -392,6 +392,184 @@
       background: repeating-linear-gradient(135deg, rgba(23,63,42,.05), rgba(23,63,42,.05) 10px, rgba(255,255,255,.45) 10px, rgba(255,255,255,.45) 20px);
     }
 
+    .institution-grid,
+    .doc-grid,
+    .fair-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      align-items: stretch;
+    }
+
+    .institution-card {
+      background: linear-gradient(145deg, rgba(23,63,42,.96), rgba(79,143,71,.92));
+      color: white;
+      border-radius: var(--radius-xl);
+      padding: 28px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .institution-card h2,
+    .institution-card h3,
+    .institution-card p {
+      color: white;
+    }
+
+    .doc-card {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 190px;
+      text-decoration: none;
+      color: var(--ink);
+      background: rgba(255,255,255,.82);
+      border: 1px solid rgba(23, 63, 42, .12);
+      border-radius: var(--radius-lg);
+      padding: 22px;
+      box-shadow: var(--shadow-soft);
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+
+    .doc-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow);
+    }
+
+    .doc-card strong {
+      color: var(--green-900);
+      font-size: 1.15rem;
+      margin-bottom: 8px;
+    }
+
+    .doc-card span {
+      display: inline-flex;
+      width: fit-content;
+      margin-top: 14px;
+      background: var(--green-900);
+      color: white;
+      border-radius: 999px;
+      padding: 8px 12px;
+      font-weight: 900;
+      font-size: .88rem;
+    }
+
+    .fair-card {
+      background: rgba(255,255,255,.82);
+      border: 1px solid rgba(23, 63, 42, .12);
+      border-radius: var(--radius-xl);
+      padding: 26px;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .normal-identity {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 14px;
+      margin-top: 20px;
+    }
+
+    .normal-token {
+      min-height: 150px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      text-align: center;
+      border-radius: 22px;
+      padding: 18px;
+      background: rgba(255,255,255,.86);
+      border: 1px solid rgba(23, 63, 42, .12);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .normal-token .icon {
+      width: 58px;
+      height: 58px;
+      display: grid;
+      place-items: center;
+      border-radius: 18px;
+      background: linear-gradient(145deg, var(--green-300), var(--sky));
+      font-size: 1.8rem;
+    }
+
+    .normal-token strong {
+      color: var(--green-900);
+      line-height: 1.15;
+    }
+
+    .normal-logo-strip {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 16px;
+      margin: 20px 0;
+    }
+
+    .normal-logo-card {
+      min-height: 145px;
+      display: grid;
+      place-items: center;
+      background: rgba(255,255,255,.92);
+      border: 1px solid rgba(23, 63, 42, .12);
+      border-radius: 24px;
+      padding: 18px;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .normal-logo-card img {
+      max-height: 92px;
+      max-width: 100%;
+      object-fit: contain;
+    }
+
+    .normal-title-panel {
+      margin-top: 16px;
+      background: linear-gradient(145deg, rgba(23,63,42,.96), rgba(79,143,71,.92));
+      color: white;
+      border-radius: var(--radius-xl);
+      padding: 28px;
+      box-shadow: var(--shadow);
+      text-align: center;
+    }
+
+    .normal-title-panel h3,
+    .normal-title-panel p {
+      color: white;
+    }
+
+    .normal-title-panel h3 {
+      font-size: clamp(1.8rem, 3.5vw, 3rem);
+      margin-bottom: 8px;
+    }
+
+    .purpose-list {
+      display: grid;
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .purpose-item {
+      display: grid;
+      grid-template-columns: 46px 1fr;
+      gap: 12px;
+      align-items: start;
+      background: rgba(251,247,239,.78);
+      border: 1px solid rgba(23, 63, 42, .1);
+      border-radius: 18px;
+      padding: 14px;
+    }
+
+    .purpose-item b {
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      background: var(--green-900);
+      color: white;
+    }
+
     .timeline { display: grid; gap: 14px; }
     .timeline-item {
       display: grid;
@@ -447,6 +625,71 @@
       font-weight: 1000;
     }
 
+    .doc-viewer {
+      position: fixed;
+      inset: 0;
+      z-index: 110;
+      background: rgba(11, 20, 14, .9);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 22px;
+    }
+
+    .doc-viewer.active {
+      display: flex;
+    }
+
+    .doc-viewer-box {
+      width: min(1100px, 96vw);
+      height: min(86vh, 850px);
+      background: white;
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 30px 90px rgba(0,0,0,.45);
+      position: relative;
+      display: grid;
+      grid-template-rows: auto 1fr;
+    }
+
+    .doc-viewer-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 14px;
+      padding: 14px 18px;
+      background: var(--green-900);
+      color: white;
+    }
+
+    .doc-viewer-head strong {
+      color: white;
+    }
+
+    .doc-viewer-head a {
+      color: white;
+      font-weight: 900;
+      text-decoration: underline;
+    }
+
+    .doc-viewer-close {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      border: none;
+      cursor: pointer;
+      background: rgba(255,255,255,.9);
+      font-size: 1.35rem;
+      font-weight: 1000;
+    }
+
+    .doc-frame {
+      width: 100%;
+      height: 100%;
+      border: none;
+      background: #f4efe6;
+    }
+
     footer {
       background: var(--green-900);
       color: white;
@@ -466,7 +709,7 @@
       .nav { align-items: flex-start; flex-direction: column; }
       .nav-links { justify-content: flex-start; }
       section { padding: 54px 0; }
-      .project-grid, .stats-grid, .feature-grid, .media-grid, .info-grid, .detail-meta { grid-template-columns: 1fr; }
+      .project-grid, .stats-grid, .feature-grid, .media-grid, .info-grid, .detail-meta, .institution-grid, .doc-grid, .fair-grid, .normal-identity, .normal-logo-strip { grid-template-columns: 1fr; }
       .hero { padding-top: 36px; }
       .floating-card { position: relative; left: auto; bottom: auto; margin-top: 14px; max-width: none; }
       .timeline-item { grid-template-columns: 1fr; }
@@ -479,9 +722,11 @@
       <div class="brand"><span class="brand-mark">🌿</span> RespiraTech</div>
       <ul class="nav-links">
         <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#institucion">Institución</a></li>
         <li><a href="#metodologia">Metodología</a></li>
         <li><a href="#proyectos">Proyectos</a></li>
-        <li><a href="#evidencias">Evidencias</a></li>
+        <li><a href="#documentacion">Documentación</a></li>
+        <li><a href="#cintermex">Cintermex</a></li>
       </ul>
     </nav>
   </header>
@@ -489,9 +734,9 @@
   <main id="inicio">
     <div class="wrap hero">
       <div>
-        <span class="eyebrow">🌬️ Proyecto institucional · Escuela Normal Miguel F. Martínez</span>
+        <span class="eyebrow">🌬️ Proyecto institucional · Exposición Cintermex</span>
         <h1>RespiraTech</h1>
-        <p class="lead">Una experiencia educativa para investigar la calidad del aire, crear prototipos STEAM y compartir soluciones con la comunidad escolar. Cada grado desarrolló una propuesta distinta para comprender, cuidar y comunicar la importancia del aire limpio.</p>
+        <p class="lead">Una experiencia educativa impulsada desde la Escuela Normal Miguel F. Martínez para investigar la calidad del aire, crear prototipos STEAM y compartir soluciones con la comunidad escolar. Esta página muestra la participación de la primaria Alberto Fernández Ruiloba dentro de una red de escuelas que presentan el proyecto institucional RespiraTech.</p>
         <div class="hero-actions">
           <a class="btn btn-primary" href="#proyectos">Explorar proyectos</a>
           <a class="btn btn-light" href="#evidencias">Ver evidencias</a>
@@ -505,6 +750,37 @@
         </div>
       </aside>
     </div>
+
+    <section id="institucion">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">Identidad normalista</span>
+            <h2>Escuela Normal Miguel F. Martínez</h2>
+          </div>
+          <p>Esta sección funciona como sello institucional: muestra los emblemas y datos básicos para que la página se reconozca como parte del proyecto de la Escuela Normal Miguel F. Martínez.</p>
+        </div>
+
+        <div class="normal-logo-strip">
+          <article class="normal-logo-card"><img src="assets/institucion/logo-normal.png" alt="Escudo de la Escuela Normal Miguel F. Martínez"></article>
+          <article class="normal-logo-card"><img src="assets/institucion/logo-nuevo-leon.png" alt="Logo de Educación Nuevo León"></article>
+          <article class="normal-logo-card"><img src="assets/institucion/logo-unesco.png" alt="Logo UNESCO Red de Escuelas Asociadas"></article>
+        </div>
+
+        <article class="normal-title-panel">
+          <h3>Escuela Normal Miguel F. Martínez</h3>
+          <p>Centenaria y Benemérita · Ciclo Escolar 2025-2026 · Licenciatura en Educación Primaria</p>
+        </article>
+
+        <div class="normal-identity">
+          <article class="normal-token"><span class="icon">👩‍🏫</span><strong>Normalistas<br>en práctica</strong></article>
+          <article class="normal-token"><span class="icon">📚</span><strong>Planeación<br>didáctica</strong></article>
+          <article class="normal-token"><span class="icon">🔬</span><strong>Proyectos<br>STEAM</strong></article>
+          <article class="normal-token"><span class="icon">📋</span><strong>Evaluación y<br>evidencias</strong></article>
+          <article class="normal-token"><span class="icon">🌎</span><strong>Servicio a la<br>comunidad</strong></article>
+        </div>
+      </div>
+    </section>
 
     <section id="ambientacion">
       <div class="wrap">
@@ -521,7 +797,7 @@
             <p>El árbol representa la relación entre aire, naturaleza, comunidad escolar y prototipos STEAM. Funciona como entrada visual para la experiencia completa de RespiraTech.</p>
           </div>
           <div class="media-card">
-            <img src="assets/exposicion-general/arbol-01.png" alt="Árbol de ambientación general de RespiraTech">
+            <img src="assets/exposicion-general/arbol-01.jpg" alt="Árbol de ambientación general de RespiraTech">
             <span class="media-caption">Árbol de ambientación general</span>
           </div>
         </div>
@@ -593,6 +869,50 @@
       </div>
     </section>
 
+    <section id="documentacion">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">Planeaciones y evaluaciones</span>
+            <h2>Documentación del proyecto</h2>
+          </div>
+          <p>Este apartado concentra planeaciones, rúbricas, evaluaciones y documentos de apoyo para que el sitio muestre el proceso completo, no solo las fotografías finales.</p>
+        </div>
+        <div class="doc-grid">
+          <button class="doc-card optional-doc" type="button" data-doc="assets/planeaciones/planeacion-grado1.pdf" data-title="Planeación 1.º grado">
+            <div><strong>Planeación 1.º grado</strong><p>Guardianes del Aire: jardín vertical y plantas purificadoras.</p></div><span>Abrir documento</span>
+          </button>
+          <button class="doc-card optional-doc" type="button" data-doc="assets/planeaciones/planeacion-grado2.pdf" data-title="Planeación 2.º grado">
+            <div><strong>Planeación 2.º grado</strong><p>Pequeños guardianes del aire: purificadores ecológicos.</p></div><span>Abrir documento</span>
+          </button>
+          <button class="doc-card optional-doc" type="button" data-doc="assets/planeaciones/planeacion-grado3.pdf" data-title="Planeación 3.º grado">
+            <div><strong>Planeación 3.º grado</strong><p>Semáforo de calidad del aire con apoyo de detector real.</p></div><span>Abrir documento</span>
+          </button>
+          <button class="doc-card optional-doc" type="button" data-doc="assets/planeaciones/planeacion-grado4.pdf" data-title="Planeación 4.º grado">
+            <div><strong>Planeación 4.º grado</strong><p>Wall-e y su planta al rescate: robot regador solar.</p></div><span>Abrir documento</span>
+          </button>
+          <button class="doc-card optional-doc" type="button" data-doc="assets/evaluaciones/evaluacion-grado1.pdf" data-title="Evaluación 1.º grado">
+            <div><strong>Evaluación 1.º grado</strong><p>Instrumentos y evidencias de evaluación del jardín vertical.</p></div><span>Abrir evaluación</span>
+          </button>
+          <button class="doc-card optional-doc" type="button" data-doc="assets/evaluaciones/evaluacion-grado2.pdf" data-title="Evaluación 2.º grado">
+            <div><strong>Evaluación 2.º grado</strong><p>Instrumentos y evidencias de evaluación del purificador ecológico.</p></div><span>Abrir evaluación</span>
+          </button>
+          <button class="doc-card optional-doc" type="button" data-doc="assets/evaluaciones/evaluacion-grado3.pdf" data-title="Evaluación 3.º grado">
+            <div><strong>Evaluación 3.º grado</strong><p>Instrumentos y evidencias de evaluación del semáforo de calidad del aire.</p></div><span>Abrir evaluación</span>
+          </button>
+          <button class="doc-card optional-doc" type="button" data-doc="assets/evaluaciones/evaluacion-grado4.pdf" data-title="Evaluación 4.º grado">
+            <div><strong>Evaluación 4.º grado</strong><p>Instrumentos y evidencias de evaluación del robot regador solar.</p></div><span>Abrir evaluación</span>
+          </button>
+          <button class="doc-card optional-doc" type="button" data-doc="assets/evaluaciones/rubricas-respiratech.pdf" data-title="Rúbricas RespiraTech">
+            <div><strong>Rúbricas RespiraTech</strong><p>Instrumentos de evaluación, exposición, logística, escuelas y sitio.</p></div><span>Abrir rúbricas</span>
+          </button>
+          <a class="doc-card" href="#evidencias">
+            <div><strong>Fotografías y evidencias</strong><p>Galerías de construcción, exposición, prototipos, alumnos y materiales.</p></div><span>Ver evidencias</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
     <section id="evidencias">
       <div class="wrap">
         <div class="section-head"><div><span class="eyebrow">Banco multimedia</span><h2>Evidencias del proceso y exposición</h2></div><p>Esta sección funciona como una galería general para fotos, dibujos de Ariel, prototipos, stands y videos. Las imágenes se pueden abrir en grande.</p></div>
@@ -608,13 +928,58 @@
     </section>
   </main>
 
-  <footer><div class="wrap"><h3>RespiraTech · Proyectando sueños</h3><p>Proyecto institucional orientado al cuidado del aire, la investigación escolar y la creación de prototipos STEAM.</p></div></footer>
+    <section id="cintermex">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">Feria RespiraTech</span>
+            <h2>Exposición Cintermex</h2>
+          </div>
+          <p>La feria muestra la importancia del proyecto institucional: varias escuelas primarias, acompañadas por normalistas de la Escuela Normal Miguel F. Martínez, presentan cómo investigaron la calidad del aire y cómo transformaron esa problemática en acciones, evidencias y prototipos para la comunidad.</p>
+        </div>
+        <div class="fair-grid">
+          <article class="fair-card">
+            <h3>¿Por qué se presentan estos proyectos?</h3>
+            <p>Porque permiten mostrar el proceso completo de aprendizaje: se detecta una problemática real, se investigan sus causas y consecuencias, se construye un prototipo, se prueba, se mejora y se comunica a otros. La exposición no busca enseñar solo un producto terminado, sino evidenciar cómo niñas y niños comprendieron el cuidado del aire y propusieron acciones posibles desde su escuela.</p>
+          </article>
+          <article class="fair-card">
+            <h3>¿Cómo colabora esta primaria?</h3>
+            <p>La primaria Alberto Fernández Ruiloba aporta una experiencia concreta dentro del proyecto institucional: sus grupos de 1.º, 2.º, 3.º y 4.º grado muestran distintas rutas para atender el mismo problema ambiental. Así, esta página funciona como una ventana de evidencias de una escuela participante dentro de una presentación más amplia de RespiraTech.</p>
+          </article>
+        </div>
+        <div class="fair-card" style="margin-top: 22px;">
+          <h3>Sentido de la feria</h3>
+          <div class="purpose-list">
+            <div class="purpose-item"><b>1</b><p><strong>Visibilizar el proceso:</strong> planeaciones, actividades, fotografías, registros y decisiones tomadas durante cada fase.</p></div>
+            <div class="purpose-item"><b>2</b><p><strong>Explicar los prototipos:</strong> cómo funcionan, para qué sirven, qué mejoras tuvieron y cómo responden a la calidad del aire.</p></div>
+            <div class="purpose-item"><b>3</b><p><strong>Comunicar aprendizajes:</strong> que el alumnado explique causas, consecuencias, acciones de cuidado y compromisos con su escuela.</p></div>
+            <div class="purpose-item"><b>4</b><p><strong>Mostrar una red de escuelas:</strong> cada primaria participante aporta una experiencia distinta al mismo proyecto institucional RespiraTech.</p></div>
+            <div class="purpose-item"><b>5</b><p><strong>Fortalecer la formación normalista:</strong> las y los normalistas documentan intervención, evaluación, evidencias, prototipos y socialización comunitaria.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  <footer><div class="wrap"><h3>RespiraTech · Exposición Cintermex</h3><p>Proyecto institucional de la Escuela Normal Miguel F. Martínez orientado al cuidado del aire, la investigación escolar, la evaluación formativa y la creación de prototipos STEAM.</p></div></footer>
 
   <div class="lightbox" id="lightbox" aria-hidden="true">
     <div class="lightbox-content">
       <button class="lightbox-close" type="button" aria-label="Cerrar">×</button>
       <div id="lightboxMedia"></div>
       <div class="lightbox-caption" id="lightboxCaption"></div>
+    </div>
+  </div>
+
+  <div class="doc-viewer" id="docViewer" aria-hidden="true">
+    <div class="doc-viewer-box">
+      <div class="doc-viewer-head">
+        <strong id="docViewerTitle">Documento</strong>
+        <div>
+          <a id="docViewerDownload" href="#" target="_blank" rel="noopener">Abrir en otra pestaña</a>
+          <button class="doc-viewer-close" type="button" aria-label="Cerrar">×</button>
+        </div>
+      </div>
+      <iframe class="doc-frame" id="docFrame" title="Vista de documento"></iframe>
     </div>
   </div>
 
@@ -645,10 +1010,91 @@
       });
     });
 
+    const optionalDocs = document.querySelectorAll('.optional-doc');
+    const docViewer = document.getElementById('docViewer');
+    const docFrame = document.getElementById('docFrame');
+    const docViewerTitle = document.getElementById('docViewerTitle');
+    const docViewerDownload = document.getElementById('docViewerDownload');
+    const closeDocViewer = document.querySelector('.doc-viewer-close');
+
+    async function fileExists(path) {
+      if (window.location.protocol === 'file:') return true;
+      try {
+        const response = await fetch(path, { method: 'HEAD', cache: 'no-store' });
+        return response.ok;
+      } catch (error) {
+        return false;
+      }
+    }
+
+    optionalDocs.forEach(async (button) => {
+      const path = button.dataset.doc;
+      const exists = await fileExists(path);
+      if (!exists) {
+        button.remove();
+        return;
+      }
+      button.addEventListener('click', () => {
+        docViewerTitle.textContent = button.dataset.title || 'Documento RespiraTech';
+        docFrame.src = path;
+        docViewerDownload.href = path;
+        docViewer.classList.add('active');
+        docViewer.setAttribute('aria-hidden', 'false');
+      });
+    });
+
+    function closeDocumentViewer() {
+      docViewer.classList.remove('active');
+      docViewer.setAttribute('aria-hidden', 'true');
+      docFrame.src = '';
+    }
+
+    closeDocViewer.addEventListener('click', closeDocumentViewer);
+    docViewer.addEventListener('click', (event) => {
+      if (event.target === docViewer) closeDocumentViewer();
+    });
+
     const lightbox = document.getElementById('lightbox');
     const lightboxMedia = document.getElementById('lightboxMedia');
     const lightboxCaption = document.getElementById('lightboxCaption');
     const closeLightbox = document.querySelector('.lightbox-close');
+
+    function getPathWithoutExtension(path) {
+      return path.replace(/\.(png|jpg|jpeg|webp|gif|mp4|webm|mov|mp3|wav|ogg)(\?.*)?$/i, '');
+    }
+
+    function makeMediaFlexible(media) {
+      const imageExtensions = ['.jpg', '.jpeg', '.png', '.webp', '.gif'];
+      const videoExtensions = ['.mp4', '.webm', '.mov'];
+      const audioExtensions = ['.mp3', '.wav', '.ogg'];
+      const current = media.getAttribute('src');
+      if (!current) return;
+
+      const extensions = media.tagName.toLowerCase() === 'video'
+        ? videoExtensions
+        : media.tagName.toLowerCase() === 'audio'
+          ? audioExtensions
+          : imageExtensions;
+
+      const base = getPathWithoutExtension(current);
+      const originalExtensionMatch = current.match(/\.(png|jpg|jpeg|webp|gif|mp4|webm|mov|mp3|wav|ogg)(\?.*)?$/i);
+      const originalExtension = originalExtensionMatch ? '.' + originalExtensionMatch[1].toLowerCase() : '';
+      const tries = [originalExtension, ...extensions].filter((ext, index, arr) => ext && arr.indexOf(ext) === index);
+      let index = 0;
+
+      media.addEventListener('error', () => {
+        index += 1;
+        if (index < tries.length) {
+          media.src = base + tries[index];
+        } else {
+          media.closest('.media-card')?.classList.add('empty-media');
+          media.closest('.media-card')?.insertAdjacentText('beforeend', ' Archivo pendiente: ' + base.split('/').pop());
+          media.remove();
+        }
+      });
+    }
+
+    document.querySelectorAll('img, video, audio').forEach(makeMediaFlexible);
 
     document.querySelectorAll('.media-card img, .media-card video').forEach(media => {
       media.addEventListener('click', () => {
@@ -683,7 +1129,10 @@
       if (event.target === lightbox) closeViewer();
     });
     window.addEventListener('keydown', (event) => {
-      if (event.key === 'Escape') closeViewer();
+      if (event.key === 'Escape') {
+        closeViewer();
+        closeDocumentViewer();
+      }
     });
   </script>
 </body>
