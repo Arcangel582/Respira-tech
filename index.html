@@ -1,10 +1,11 @@
 <!DOCTYPE html>
+
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>RespiraTech | Proyecto institucional</title>
-  <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>RespiraTech | Proyecto institucional</title>
+<style>
     :root {
       --bg: #f4efe6;
       --bg-soft: #fbf7ef;
@@ -714,276 +715,295 @@
       .floating-card { position: relative; left: auto; bottom: auto; margin-top: 14px; max-width: none; }
       .timeline-item { grid-template-columns: 1fr; }
     }
-  </style>
+  
+
+    /* Ajuste RespiraTech: las galerías ahora se llenan solo con archivos existentes. */
+    .media-grid.is-empty,
+    .gallery-section.is-empty,
+    .gallery-block.is-empty {
+      display: none;
+    }
+
+    .gallery-loading {
+      min-height: 120px;
+      display: grid;
+      place-items: center;
+      color: var(--muted);
+      font-weight: 800;
+      border-radius: 20px;
+      background: rgba(255,255,255,.52);
+      border: 1px dashed rgba(23, 63, 42, .18);
+    }
+
+    .media-card.video-card {
+      display: grid;
+      place-items: center;
+      min-height: 250px;
+      padding: 20px;
+      text-align: center;
+      background: linear-gradient(145deg, rgba(23,63,42,.95), rgba(79,143,71,.88));
+      color: white;
+    }
+
+    .media-card.video-card strong {
+      display: block;
+      color: white;
+      font-size: 1.1rem;
+      margin-bottom: 8px;
+    }
+
+    .media-card.video-card span {
+      color: rgba(255,255,255,.88);
+      font-weight: 800;
+    }
+
+    .doc-card {
+      text-align: left;
+      font-family: inherit;
+      cursor: pointer;
+    }
+</style>
 </head>
 <body>
-  <header class="site-header">
-    <nav class="nav">
-      <div class="brand"><span class="brand-mark">🌿</span> RespiraTech</div>
-      <ul class="nav-links">
-        <li><a href="#inicio">Inicio</a></li>
-        <li><a href="#institucion">Institución</a></li>
-        <li><a href="#metodologia">Metodología</a></li>
-        <li><a href="#proyectos">Proyectos</a></li>
-        <li><a href="#documentacion">Documentación</a></li>
-        <li><a href="#cintermex">Cintermex</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <main id="inicio">
-    <div class="wrap hero">
-      <div>
-        <span class="eyebrow">🌬️ Proyecto institucional · Exposición Cintermex</span>
-        <h1>RespiraTech</h1>
-        <p class="lead">Una experiencia educativa impulsada desde la Escuela Normal Miguel F. Martínez para investigar la calidad del aire, crear prototipos STEAM y compartir soluciones con la comunidad escolar. Esta página muestra la participación de la primaria Alberto Fernández Ruiloba dentro de una red de escuelas que presentan el proyecto institucional RespiraTech.</p>
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="#proyectos">Explorar proyectos</a>
-          <a class="btn btn-light" href="#evidencias">Ver evidencias</a>
-        </div>
-      </div>
-      <aside class="hero-visual">
-        <img src="assets/mascota/ariel-principal.png" alt="Ariel, guardián del aire" />
-        <div class="floating-card">
-          <strong>Ariel · Guardián del aire</strong>
-          <p>La mascota acompaña la misión: observar, investigar y cuidar el aire que respiramos.</p>
-        </div>
-      </aside>
-    </div>
-
-    <section id="institucion">
-      <div class="wrap">
-        <div class="section-head">
-          <div>
-            <span class="eyebrow">Identidad normalista</span>
-            <h2>Escuela Normal Miguel F. Martínez</h2>
-          </div>
-          <p>Escuela Normal Miguel F. Martínez Centenaria y Benemerita.</p>
-        </div>
-
-        <div class="normal-logo-strip">
-          <article class="normal-logo-card"><img src="assets/institucion/logo-normal.png" alt="Escudo de la Escuela Normal Miguel F. Martínez"></article>
-          <article class="normal-logo-card"><img src="assets/institucion/logo-nuevo-leon.png" alt="Logo de Educación Nuevo León"></article>
-          <article class="normal-logo-card"><img src="assets/institucion/logo-unesco.png" alt="Logo UNESCO Red de Escuelas Asociadas"></article>
-        </div>
-
-        <article class="normal-title-panel">
-          <h3>Escuela Normal Miguel F. Martínez</h3>
-          <p>Centenaria y Benemérita · Ciclo Escolar 2025-2026 · Licenciatura en Educación Primaria</p>
-        </article>
-
-        <div class="normal-identity">
-          <article class="normal-token"><span class="icon">👩‍🏫</span><strong>Normalistas<br>en práctica</strong></article>
-          <article class="normal-token"><span class="icon">📚</span><strong>Planeación<br>didáctica</strong></article>
-          <article class="normal-token"><span class="icon">🔬</span><strong>Proyectos<br>STEAM</strong></article>
-          <article class="normal-token"><span class="icon">📋</span><strong>Evaluación y<br>evidencias</strong></article>
-          <article class="normal-token"><span class="icon">🌎</span><strong>Servicio a la<br>comunidad</strong></article>
-        </div>
-      </div>
-    </section>
-
-    <section id="ambientacion">
-      <div class="wrap">
-        <div class="section-head">
-          <div>
-            <span class="eyebrow">Ambientación general</span>
-            <h2>El árbol de RespiraTech</h2>
-          </div>
-          <p>Este elemento forma parte de la exposición general, por eso se muestra como ambientación institucional y no dentro de un solo grado.</p>
-        </div>
-        <div class="detail-hero">
-          <div>
-            <h3>Un espacio común para todos los proyectos</h3>
-            <p>El árbol representa la relación entre aire, naturaleza, comunidad escolar y prototipos STEAM. Funciona como entrada visual para la experiencia completa de RespiraTech.</p>
-          </div>
-          <div class="media-card">
-            <img src="assets/exposicion-general/arbol-01.jpg" alt="Árbol de ambientación general de RespiraTech">
-            <span class="media-caption">Árbol de ambientación general</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section>
-      <div class="wrap stats-grid">
-        <article class="stat-card"><strong>8</strong><span>normalistas participantes</span></article>
-        <article class="stat-card"><strong>4</strong><span>grados con proyectos</span></article>
-        <article class="stat-card"><strong>4</strong><span>prototipos principales</span></article>
-        <article class="stat-card"><strong>1</strong><span>misión: cuidar el aire</span></article>
-      </div>
-    </section>
-
-    <section id="metodologia">
-      <div class="wrap">
-        <div class="section-head">
-          <div>
-            <span class="eyebrow">ABPC / ABI-STEAM</span>
-            <h2>Metodología del proyecto</h2>
-          </div>
-          <p>El proyecto integra investigación, acción, prototipado, comunicación y socialización de evidencias para fortalecer el aprendizaje situado.</p>
-        </div>
-        <div class="feature-grid">
-          <article class="card method-card" data-step="01"><b>1</b><h3>Planeación</h3><p>Se identifica la problemática, se recuperan saberes previos, se delimitan preguntas guía y se organizan rutas de trabajo.</p></article>
-          <article class="card method-card" data-step="02"><b>2</b><h3>Acción</h3><p>Los estudiantes investigan, registran información, experimentan, diseñan y construyen prototipos vinculados con la calidad del aire.</p></article>
-          <article class="card method-card" data-step="03"><b>3</b><h3>Intervención</h3><p>Se presentan productos, se comunican hallazgos, se socializan evidencias y se proponen acciones para la comunidad escolar.</p></article>
-        </div>
-      </div>
-    </section>
-
-    <section id="proyectos">
-      <div class="wrap">
-        <div class="section-head">
-          <div>
-            <span class="eyebrow">Proyectos por grado</span>
-            <h2>Una escuela, cuatro rutas para cuidar el aire</h2>
-          </div>
-          <p>Selecciona una tarjeta para abrir el apartado del grado. Cada proyecto cuenta con espacio para problemática, propósito, proceso, producto, fotos y videos.</p>
-        </div>
-
-        <div class="project-grid">
-          <article class="project-card" data-project="g1"><span class="tag">1.º grado</span><div class="emoji">🌱</div><h3>Guardianes del Aire</h3><p>Jardín vertical y plantas purificadoras para el aula.</p><div class="bottom"><span>Ver proyecto</span><span>→</span></div></article>
-          <article class="project-card blue" data-project="g2"><span class="tag">2.º grado</span><div class="emoji">🪴</div><h3>Pequeños guardianes</h3><p>Purificadores de plantas con materiales reciclables.</p><div class="bottom"><span>Ver proyecto</span><span>→</span></div></article>
-          <article class="project-card red" data-project="g3"><span class="tag">3.º grado</span><div class="emoji">🚦</div><h3>Semáforo del aire</h3><p>Prototipo para comunicar la calidad del aire con colores.</p><div class="bottom"><span>Ver proyecto</span><span>→</span></div></article>
-          <article class="project-card yellow" data-project="g4"><span class="tag">4.º grado</span><div class="emoji">🤖</div><h3>Wall-e al rescate</h3><p>Robot que riega una planta purificadora con energía solar.</p><div class="bottom"><span>Ver proyecto</span><span>→</span></div></article>
-        </div>
-
-        <article class="project-detail active" id="g1">
-          <div class="detail-hero"><div><span class="eyebrow">1.º grado · ABPC</span><h3>Guardianes del Aire: Proyecto RespiraTEC</h3><p>El alumnado identificó contaminantes invisibles y construyó un jardín de plantas para favorecer la conciencia ambiental.</p></div><div class="detail-meta"><div class="meta-box"><strong>Producto</strong><span>Jardín vertical</span></div><div class="meta-box"><strong>Participantes</strong><span>3 normalistas</span></div><div class="meta-box"><strong>Escenario</strong><span>Aula y escuela</span></div><div class="meta-box"><strong>Estado</strong><span>Con información base</span></div></div></div>
-          <div class="detail-body"><div class="info-grid"><div class="info-box"><strong>Problemática</strong><p>La presencia de polvo y contaminantes invisibles en el aire de la escuela afecta la salud de los alumnos, quienes desconocen cómo identificar y mejorar la calidad del aire en su salón.</p></div><div class="info-box"><strong>Propósito</strong><p>Fomentar la conciencia ambiental mediante la investigación científica y la creación de un prototipo de jardín de plantas que purifique el aire del aula.</p></div><div class="info-box"><strong>Cómo se trabajó</strong><p>El grupo exploró la presencia del aire, realizó muestras de polvo, observó plantas, decoró macetas y participó en la construcción del jardín vertical.</p></div><div class="info-box"><strong>Producto final</strong><p>Jardín vertical con plantas purificadoras y evidencias de investigación adaptadas al nivel de primer grado.</p></div></div><div class="gallery-block" data-gallery="g1"><h3>Galería de primer grado</h3><div class="gallery-tabs"><button class="gallery-tab active" data-type="construccion">Construcción</button><button class="gallery-tab" data-type="exposicion">Exposición</button><button class="gallery-tab" data-type="videos">Videos</button></div><div class="gallery-section active" data-type="construccion"><div class="media-grid"><div class="media-card"><img src="assets/grado1/construccion-01.jpg" alt="Construcción del jardín vertical"><span class="media-caption">Construcción del jardín vertical</span></div><div class="media-card empty-media">Espacio para más fotos de proceso</div><div class="media-card empty-media">Espacio para evidencia del aula</div></div></div><div class="gallery-section" data-type="exposicion"><div class="media-grid"><div class="media-card empty-media">Fotos de exposición de 1.º grado</div><div class="media-card empty-media">Producto terminado</div><div class="media-card empty-media">Participación del alumnado</div></div></div><div class="gallery-section" data-type="videos"><div class="media-grid"><div class="media-card empty-media">Video de presentación</div><div class="media-card empty-media">Video de explicación</div></div></div></div></div>
-        </article>
-
-        <article class="project-detail" id="g2">
-          <div class="detail-hero"><div><span class="eyebrow">2.º grado · ABI-STEAM</span><h3>RespiraTech: Pequeños guardianes del aire</h3><p>El alumnado investigó plantas purificadoras y elaboró un prototipo ecológico con materiales reciclables y foami moldeable.</p></div><div class="detail-meta"><div class="meta-box"><strong>Producto</strong><span>Purificadores de plantas</span></div><div class="meta-box"><strong>Participantes</strong><span>1 normalista</span></div><div class="meta-box"><strong>Grupo</strong><span>2.º A</span></div><div class="meta-box"><strong>Estado</strong><span>Con información completa</span></div></div></div>
-          <div class="detail-body"><div class="info-grid"><div class="info-box"><strong>Problemática</strong><p>Existe poco conocimiento sobre las plantas que ayudan a purificar el aire y su importancia para el cuidado del medio ambiente.</p></div><div class="info-box"><strong>Propósito</strong><p>Investigar plantas que contribuyen a la purificación del aire, analizar su importancia y elaborar un prototipo ecológico llamado RespiraTech.</p></div><div class="info-box"><strong>Cómo se trabajó</strong><p>Se observaron videos de Ariel, se investigaron plantas purificadoras, se elaboraron bocetos, se clasificaron materiales reciclables y se representaron plantas mediante producciones artísticas.</p></div><div class="info-box"><strong>Producto final</strong><p>Purificador ecológico con materiales reciclables, foami moldeable y comunicación oral/escrita sobre el cuidado del aire.</p></div></div><div class="gallery-block" data-gallery="g2"><h3>Galería de segundo grado</h3><div class="gallery-tabs"><button class="gallery-tab active" data-type="construccion">Construcción</button><button class="gallery-tab" data-type="exposicion">Exposición</button><button class="gallery-tab" data-type="videos">Videos</button></div><div class="gallery-section active" data-type="construccion"><div class="media-grid"><div class="media-card empty-media">Proceso de purificadores</div><div class="media-card empty-media">Bocetos y materiales</div><div class="media-card empty-media">Foami y plantas</div></div></div><div class="gallery-section" data-type="exposicion"><div class="media-grid"><div class="media-card empty-media">Fotos de exposición</div><div class="media-card empty-media">Producto terminado</div></div></div><div class="gallery-section" data-type="videos"><div class="media-grid"><div class="media-card empty-media">Video del alumnado</div></div></div></div></div>
-        </article>
-
-        <article class="project-detail" id="g3">
-          <div class="detail-hero"><div><span class="eyebrow">3.º grado · ABPC + STEAM</span><h3>RespiraTech: Semáforo de calidad del aire</h3><p>Un semáforo físico comunica si el aire está en verde, amarillo o rojo, apoyándose en un instrumento real de detección usado por el docente normalista.</p></div><div class="detail-meta"><div class="meta-box"><strong>Producto</strong><span>Semáforo del aire</span></div><div class="meta-box"><strong>Participantes</strong><span>1 normalista</span></div><div class="meta-box"><strong>Grupo</strong><span>3.º A</span></div><div class="meta-box"><strong>Estado</strong><span>Con evidencias</span></div></div></div>
-          <div class="detail-body"><div class="info-grid"><div class="info-box"><strong>Problemática</strong><p>En la zona metropolitana de Monterrey la calidad del aire suele empeorar por actividades humanas y condiciones del entorno; esto también afecta a las y los estudiantes.</p></div><div class="info-box"><strong>Propósito</strong><p>Que el alumnado indague causas, consecuencias y acciones para mejorar o cuidar el aire, y desarrolle un prototipo STEAM: un semáforo de calidad del aire.</p></div><div class="info-box"><strong>Cómo se trabajó</strong><p>Se investigaron causas y consecuencias, se acordaron reglas para los colores del semáforo, se diseñó el prototipo y se relacionó con lecturas reales del instrumento docente.</p></div><div class="info-box"><strong>Producto final</strong><p>Semáforo con sistema de engranaje que los alumnos giran según el resultado del detector de calidad del aire.</p></div></div><div class="gallery-block" data-gallery="g3"><h3>Galería de tercer grado</h3><div class="gallery-tabs"><button class="gallery-tab active" data-type="construccion">Construcción</button><button class="gallery-tab" data-type="exposicion">Exposición</button><button class="gallery-tab" data-type="videos">Videos</button></div><div class="gallery-section active" data-type="construccion"><div class="media-grid"><div class="media-card"><img src="assets/grado3/exposicion-01.jpg" alt="Exposición del semáforo de calidad del aire"><span class="media-caption">Exposición del semáforo de calidad del aire</span></div><div class="media-card"><img src="assets/grado3/prototipo-01.jpg" alt="Prototipo del semáforo"><span class="media-caption">Prototipo del semáforo</span></div><div class="media-card empty-media">Más fotos del proceso</div></div></div><div class="gallery-section" data-type="exposicion"><div class="media-grid"><div class="media-card"><img src="assets/grado3/exposicion-02.jpg" alt="Alumnado presentando el proyecto"><span class="media-caption">Alumnado presentando el proyecto</span></div><div class="media-card empty-media">Carteles y fichas</div><div class="media-card empty-media">Demostración del detector</div></div></div><div class="gallery-section" data-type="videos"><div class="media-grid"><div class="media-card empty-media">Video de explicación del semáforo</div><div class="media-card empty-media">Video de exposición del grupo</div></div></div></div></div>
-        </article>
-
-        <article class="project-detail" id="g4">
-          <div class="detail-hero"><div><span class="eyebrow">4.º grado · ABI-STEAM</span><h3>Wall-e y su planta al rescate</h3><p>El alumnado construyó un robot con mecanismo de riego para una planta purificadora de aire, alimentado con energía solar.</p></div><div class="detail-meta"><div class="meta-box"><strong>Producto</strong><span>Robot regador solar</span></div><div class="meta-box"><strong>Participantes</strong><span>3 normalistas</span></div><div class="meta-box"><strong>Grado</strong><span>4.º grado</span></div><div class="meta-box"><strong>Estado</strong><span>Con evidencias</span></div></div></div>
-          <div class="detail-body"><div class="info-grid"><div class="info-box"><strong>Problemática</strong><p>La calidad del aire en el área metropolitana ha avanzado a niveles preocupantes, amenazando la salud de los estudiantes.</p></div><div class="info-box"><strong>Propósito</strong><p>Construir un robot con un mecanismo que riegue una planta purificadora de aire, alimentado con energía solar, para fortalecer habilidades matemáticas, botánicas y artísticas.</p></div><div class="info-box"><strong>Cómo se trabajó</strong><p>Se introdujo la problemática, se investigaron alternativas con plantas, se organizaron materiales, se diseñó el robot y se vinculó el prototipo con energía solar.</p></div><div class="info-box"><strong>Producto final</strong><p>Robot inspirado en Wall-e que cuida una planta purificadora y representa una solución creativa ante la mala calidad del aire.</p></div></div><div class="gallery-block" data-gallery="g4"><h3>Galería de cuarto grado</h3><div class="gallery-tabs"><button class="gallery-tab active" data-type="construccion">Construcción</button><button class="gallery-tab" data-type="exposicion">Exposición</button><button class="gallery-tab" data-type="videos">Videos</button></div><div class="gallery-section active" data-type="construccion"><div class="media-grid"><div class="media-card"><img src="assets/grado4/construccion-01.jpg" alt="Construcción del prototipo Wall-e"><span class="media-caption">Construcción del prototipo</span></div><div class="media-card"><img src="assets/grado4/walle-01.jpg" alt="Prototipo de Wall-e y planta al rescate"><span class="media-caption">Prototipo Wall-e</span></div><div class="media-card empty-media">Más fotos del proceso</div></div></div><div class="gallery-section" data-type="exposicion"><div class="media-grid"><div class="media-card"><img src="assets/grado4/stand-01.jpg" alt="Presentación del proyecto de cuarto grado"><span class="media-caption">Presentación del proyecto</span></div><div class="media-card empty-media">Alumnado explicando</div><div class="media-card empty-media">Producto terminado</div></div></div><div class="gallery-section" data-type="videos"><div class="media-grid"><div class="media-card empty-media">Video de Wall-e funcionando</div><div class="media-card empty-media">Video de explicación</div></div></div></div></div>
-        </article>
-      </div>
-    </section>
-
-    <section id="documentacion">
-      <div class="wrap">
-        <div class="section-head">
-          <div>
-            <span class="eyebrow">Planeaciones y evaluaciones</span>
-            <h2>Documentación del proyecto</h2>
-          </div>
-          <p>Este apartado concentra planeaciones, rúbricas, evaluaciones y documentos de apoyo para que el sitio muestre el proceso completo, no solo las fotografías finales.</p>
-        </div>
-        <div class="doc-grid">
-          <button class="doc-card optional-doc" type="button" data-doc="assets/planeaciones/planeacion-grado1.pdf" data-title="Planeación 1.º grado">
-            <div><strong>Planeación 1.º grado</strong><p>Guardianes del Aire: jardín vertical y plantas purificadoras.</p></div><span>Abrir documento</span>
-          </button>
-          <button class="doc-card optional-doc" type="button" data-doc="assets/planeaciones/planeacion-grado2.pdf" data-title="Planeación 2.º grado">
-            <div><strong>Planeación 2.º grado</strong><p>Pequeños guardianes del aire: purificadores ecológicos.</p></div><span>Abrir documento</span>
-          </button>
-          <button class="doc-card optional-doc" type="button" data-doc="assets/planeaciones/planeacion-grado3.pdf" data-title="Planeación 3.º grado">
-            <div><strong>Planeación 3.º grado</strong><p>Semáforo de calidad del aire con apoyo de detector real.</p></div><span>Abrir documento</span>
-          </button>
-          <button class="doc-card optional-doc" type="button" data-doc="assets/planeaciones/planeacion-grado4.pdf" data-title="Planeación 4.º grado">
-            <div><strong>Planeación 4.º grado</strong><p>Wall-e y su planta al rescate: robot regador solar.</p></div><span>Abrir documento</span>
-          </button>
-          <button class="doc-card optional-doc" type="button" data-doc="assets/evaluaciones/evaluacion-grado1.pdf" data-title="Evaluación 1.º grado">
-            <div><strong>Evaluación 1.º grado</strong><p>Instrumentos y evidencias de evaluación del jardín vertical.</p></div><span>Abrir evaluación</span>
-          </button>
-          <button class="doc-card optional-doc" type="button" data-doc="assets/evaluaciones/evaluacion-grado2.pdf" data-title="Evaluación 2.º grado">
-            <div><strong>Evaluación 2.º grado</strong><p>Instrumentos y evidencias de evaluación del purificador ecológico.</p></div><span>Abrir evaluación</span>
-          </button>
-          <button class="doc-card optional-doc" type="button" data-doc="assets/evaluaciones/evaluacion-grado3.pdf" data-title="Evaluación 3.º grado">
-            <div><strong>Evaluación 3.º grado</strong><p>Instrumentos y evidencias de evaluación del semáforo de calidad del aire.</p></div><span>Abrir evaluación</span>
-          </button>
-          <button class="doc-card optional-doc" type="button" data-doc="assets/evaluaciones/evaluacion-grado4.pdf" data-title="Evaluación 4.º grado">
-            <div><strong>Evaluación 4.º grado</strong><p>Instrumentos y evidencias de evaluación del robot regador solar.</p></div><span>Abrir evaluación</span>
-          </button>
-          <button class="doc-card optional-doc" type="button" data-doc="assets/evaluaciones/rubricas-respiratech.pdf" data-title="Rúbricas RespiraTech">
-            <div><strong>Rúbricas RespiraTech</strong><p>Instrumentos de evaluación, exposición, logística, escuelas y sitio.</p></div><span>Abrir rúbricas</span>
-          </button>
-          <a class="doc-card" href="#evidencias">
-            <div><strong>Fotografías y evidencias</strong><p>Galerías de construcción, exposición, prototipos, alumnos y materiales.</p></div><span>Ver evidencias</span>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <section id="evidencias">
-      <div class="wrap">
-        <div class="section-head"><div><span class="eyebrow">Banco multimedia</span><h2>Evidencias del proceso y exposición</h2></div><p>Esta sección funciona como una galería general para fotos, dibujos de Ariel, prototipos, stands y videos. Las imágenes se pueden abrir en grande.</p></div>
-        <div class="media-grid">
-          <div class="media-card"><img src="assets/exposicion-general/arbol-01.jpg" alt="Árbol de ambientación general de RespiraTech"><span class="media-caption">Árbol de la exposición general</span></div>
-          <div class="media-card"><img src="assets/mascota/ariel-expresiones.jpg" alt="Expresiones de Ariel"><span class="media-caption">Expresiones de Ariel</span></div>
-          <div class="media-card"><img src="assets/grado4/walle-01.jpg" alt="Prototipo Wall-e"><span class="media-caption">Prototipo Wall-e</span></div>
-          <div class="media-card"><img src="assets/grado3/exposicion-02.jpg" alt="Semáforo del aire"><span class="media-caption">Semáforo del aire</span></div>
-          <div class="media-card empty-media">Video general de RespiraTech</div>
-          <div class="media-card empty-media">Más evidencias por agregar</div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-    <section id="cintermex">
-      <div class="wrap">
-        <div class="section-head">
-          <div>
-            <span class="eyebrow">Feria RespiraTech</span>
-            <h2>Exposición Cintermex</h2>
-          </div>
-          <p>La feria muestra la importancia del proyecto institucional: varias escuelas primarias, acompañadas por normalistas de la Escuela Normal Miguel F. Martínez, presentan cómo investigaron la calidad del aire y cómo transformaron esa problemática en acciones, evidencias y prototipos para la comunidad.</p>
-        </div>
-        <div class="fair-grid">
-          <article class="fair-card">
-            <h3>¿Por qué se presentan estos proyectos?</h3>
-            <p>Porque permiten mostrar el proceso completo de aprendizaje: se detecta una problemática real, se investigan sus causas y consecuencias, se construye un prototipo, se prueba, se mejora y se comunica a otros. La exposición no busca enseñar solo un producto terminado, sino evidenciar cómo niñas y niños comprendieron el cuidado del aire y propusieron acciones posibles desde su escuela.</p>
-          </article>
-          <article class="fair-card">
-            <h3>¿Cómo colabora esta primaria?</h3>
-            <p>La primaria Alberto Fernández Ruiloba aporta una experiencia concreta dentro del proyecto institucional: sus grupos de 1.º, 2.º, 3.º y 4.º grado muestran distintas rutas para atender el mismo problema ambiental. Así, esta página funciona como una ventana de evidencias de una escuela participante dentro de una presentación más amplia de RespiraTech.</p>
-          </article>
-        </div>
-        <div class="fair-card" style="margin-top: 22px;">
-          <h3>Sentido de la feria</h3>
-          <div class="purpose-list">
-            <div class="purpose-item"><b>1</b><p><strong>Visibilizar el proceso:</strong> planeaciones, actividades, fotografías, registros y decisiones tomadas durante cada fase.</p></div>
-            <div class="purpose-item"><b>2</b><p><strong>Explicar los prototipos:</strong> cómo funcionan, para qué sirven, qué mejoras tuvieron y cómo responden a la calidad del aire.</p></div>
-            <div class="purpose-item"><b>3</b><p><strong>Comunicar aprendizajes:</strong> que el alumnado explique causas, consecuencias, acciones de cuidado y compromisos con su escuela.</p></div>
-            <div class="purpose-item"><b>4</b><p><strong>Mostrar una red de escuelas:</strong> cada primaria participante aporta una experiencia distinta al mismo proyecto institucional RespiraTech.</p></div>
-            <div class="purpose-item"><b>5</b><p><strong>Fortalecer la formación normalista:</strong> las y los normalistas documentan intervención, evaluación, evidencias, prototipos y socialización comunitaria.</p></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-  <footer><div class="wrap"><h3>RespiraTech · Exposición Cintermex</h3><p>Proyecto institucional de la Escuela Normal Miguel F. Martínez orientado al cuidado del aire, la investigación escolar, la evaluación formativa y la creación de prototipos STEAM.</p></div></footer>
-
-  <div class="lightbox" id="lightbox" aria-hidden="true">
-    <div class="lightbox-content">
-      <button class="lightbox-close" type="button" aria-label="Cerrar">×</button>
-      <div id="lightboxMedia"></div>
-      <div class="lightbox-caption" id="lightboxCaption"></div>
-    </div>
-  </div>
-
-  <div class="doc-viewer" id="docViewer" aria-hidden="true">
-    <div class="doc-viewer-box">
-      <div class="doc-viewer-head">
-        <strong id="docViewerTitle">Documento</strong>
-        <div>
-          <a id="docViewerDownload" href="#" target="_blank" rel="noopener">Abrir en otra pestaña</a>
-          <button class="doc-viewer-close" type="button" aria-label="Cerrar">×</button>
-        </div>
-      </div>
-      <iframe class="doc-frame" id="docFrame" title="Vista de documento"></iframe>
-    </div>
-  </div>
-
-  <script>
+<header class="site-header">
+<nav class="nav">
+<div class="brand"><span class="brand-mark">🌿</span> RespiraTech</div>
+<ul class="nav-links">
+<li><a href="#inicio">Inicio</a></li>
+<li><a href="#institucion">Institución</a></li>
+<li><a href="#metodologia">Metodología</a></li>
+<li><a href="#proyectos">Proyectos</a></li>
+<li><a href="#documentacion">Documentación</a></li>
+<li><a href="#cintermex">Cintermex</a></li>
+</ul>
+</nav>
+</header>
+<main id="inicio">
+<div class="wrap hero">
+<div>
+<span class="eyebrow">🌬️ Proyecto institucional · Exposición Cintermex</span>
+<h1>RespiraTech</h1>
+<p class="lead">Una experiencia educativa impulsada desde la Escuela Normal Miguel F. Martínez para investigar la calidad del aire, crear prototipos STEAM y compartir soluciones con la comunidad escolar. Esta página muestra la participación de la primaria Alberto Fernández Ruiloba dentro de una red de escuelas que presentan el proyecto institucional RespiraTech.</p>
+<div class="hero-actions">
+<a class="btn btn-primary" href="#proyectos">Explorar proyectos</a>
+<a class="btn btn-light" href="#evidencias">Ver evidencias</a>
+</div>
+</div>
+<aside class="hero-visual">
+<img alt="Ariel, guardián del aire" src="assets/mascota/ariel-principal.png"/>
+<div class="floating-card">
+<strong>Ariel · Guardián del aire</strong>
+<p>La mascota acompaña la misión: observar, investigar y cuidar el aire que respiramos.</p>
+</div>
+</aside>
+</div>
+<section id="institucion">
+<div class="wrap">
+<div class="section-head">
+<div>
+<span class="eyebrow">Identidad normalista</span>
+<h2>Escuela Normal Miguel F. Martínez</h2>
+</div>
+<p>Esta sección funciona como sello institucional: muestra los emblemas y datos básicos para que la página se reconozca como parte del proyecto de la Escuela Normal Miguel F. Martínez.</p>
+</div>
+<div class="normal-logo-strip">
+<article class="normal-logo-card"><img alt="Escudo de la Escuela Normal Miguel F. Martínez" src="assets/institucion/logo-normal.png"/></article>
+<article class="normal-logo-card"><img alt="Logo de Educación Nuevo León" src="assets/institucion/logo-nuevo-leon.png"/></article>
+<article class="normal-logo-card"><img alt="Logo UNESCO Red de Escuelas Asociadas" src="assets/institucion/logo-unesco.png"/></article>
+</div>
+<article class="normal-title-panel">
+<h3>Escuela Normal Miguel F. Martínez</h3>
+<p>Centenaria y Benemérita · Ciclo Escolar 2025-2026 · Licenciatura en Educación Primaria</p>
+</article>
+<div class="normal-identity">
+<article class="normal-token"><span class="icon">👩‍🏫</span><strong>Normalistas<br/>en práctica</strong></article>
+<article class="normal-token"><span class="icon">📚</span><strong>Planeación<br/>didáctica</strong></article>
+<article class="normal-token"><span class="icon">🔬</span><strong>Proyectos<br/>STEAM</strong></article>
+<article class="normal-token"><span class="icon">📋</span><strong>Evaluación y<br/>evidencias</strong></article>
+<article class="normal-token"><span class="icon">🌎</span><strong>Servicio a la<br/>comunidad</strong></article>
+</div>
+</div>
+</section>
+<section id="ambientacion">
+<div class="wrap">
+<div class="section-head">
+<div>
+<span class="eyebrow">Ambientación general</span>
+<h2>El árbol de RespiraTech</h2>
+</div>
+<p>Este elemento forma parte de la exposición general, por eso se muestra como ambientación institucional y no dentro de un solo grado.</p>
+</div>
+<div class="detail-hero">
+<div>
+<h3>Un espacio común para todos los proyectos</h3>
+<p>El árbol representa la relación entre aire, naturaleza, comunidad escolar y prototipos STEAM. Funciona como entrada visual para la experiencia completa de RespiraTech.</p>
+</div>
+<div class="media-card">
+<img alt="Árbol de ambientación general de RespiraTech" src="assets/exposicion-general/arbol-01.png"/>
+<span class="media-caption">Árbol de ambientación general</span>
+</div>
+</div>
+</div>
+</section>
+<section>
+<div class="wrap stats-grid">
+<article class="stat-card"><strong>8</strong><span>normalistas participantes</span></article>
+<article class="stat-card"><strong>4</strong><span>grados con proyectos</span></article>
+<article class="stat-card"><strong>4</strong><span>prototipos principales</span></article>
+<article class="stat-card"><strong>1</strong><span>misión: cuidar el aire</span></article>
+</div>
+</section>
+<section id="metodologia">
+<div class="wrap">
+<div class="section-head">
+<div>
+<span class="eyebrow">ABPC / ABI-STEAM</span>
+<h2>Metodología del proyecto</h2>
+</div>
+<p>El proyecto integra investigación, acción, prototipado, comunicación y socialización de evidencias para fortalecer el aprendizaje situado.</p>
+</div>
+<div class="feature-grid">
+<article class="card method-card" data-step="01"><b>1</b><h3>Planeación</h3><p>Se identifica la problemática, se recuperan saberes previos, se delimitan preguntas guía y se organizan rutas de trabajo.</p></article>
+<article class="card method-card" data-step="02"><b>2</b><h3>Acción</h3><p>Los estudiantes investigan, registran información, experimentan, diseñan y construyen prototipos vinculados con la calidad del aire.</p></article>
+<article class="card method-card" data-step="03"><b>3</b><h3>Intervención</h3><p>Se presentan productos, se comunican hallazgos, se socializan evidencias y se proponen acciones para la comunidad escolar.</p></article>
+</div>
+</div>
+</section>
+<section id="proyectos">
+<div class="wrap">
+<div class="section-head">
+<div>
+<span class="eyebrow">Proyectos por grado</span>
+<h2>Una escuela, cuatro rutas para cuidar el aire</h2>
+</div>
+<p>Selecciona una tarjeta para abrir el apartado del grado. Cada proyecto cuenta con espacio para problemática, propósito, proceso, producto, fotos y videos.</p>
+</div>
+<div class="project-grid">
+<article class="project-card" data-project="g1"><span class="tag">1.º grado</span><div class="emoji">🌱</div><h3>Guardianes del Aire</h3><p>Jardín vertical y plantas purificadoras para el aula.</p><div class="bottom"><span>Ver proyecto</span><span>→</span></div></article>
+<article class="project-card blue" data-project="g2"><span class="tag">2.º grado</span><div class="emoji">🪴</div><h3>Pequeños guardianes</h3><p>Purificadores de plantas con materiales reciclables.</p><div class="bottom"><span>Ver proyecto</span><span>→</span></div></article>
+<article class="project-card red" data-project="g3"><span class="tag">3.º grado</span><div class="emoji">🚦</div><h3>Semáforo del aire</h3><p>Prototipo para comunicar la calidad del aire con colores.</p><div class="bottom"><span>Ver proyecto</span><span>→</span></div></article>
+<article class="project-card yellow" data-project="g4"><span class="tag">4.º grado</span><div class="emoji">🤖</div><h3>Wall-e al rescate</h3><p>Robot que riega una planta purificadora con energía solar.</p><div class="bottom"><span>Ver proyecto</span><span>→</span></div></article>
+</div>
+<article class="project-detail active" id="g1">
+<div class="detail-hero"><div><span class="eyebrow">1.º grado · ABPC</span><h3>Guardianes del Aire: Proyecto RespiraTEC</h3><p>El alumnado identificó contaminantes invisibles y construyó un jardín de plantas para favorecer la conciencia ambiental.</p></div><div class="detail-meta"><div class="meta-box"><strong>Producto</strong><span>Jardín vertical</span></div><div class="meta-box"><strong>Participantes</strong><span>3 normalistas</span></div><div class="meta-box"><strong>Escenario</strong><span>Aula y escuela</span></div><div class="meta-box"><strong>Estado</strong><span>Con información base</span></div></div></div>
+<div class="detail-body"><div class="info-grid"><div class="info-box"><strong>Problemática</strong><p>La presencia de polvo y contaminantes invisibles en el aire de la escuela afecta la salud de los alumnos, quienes desconocen cómo identificar y mejorar la calidad del aire en su salón.</p></div><div class="info-box"><strong>Propósito</strong><p>Fomentar la conciencia ambiental mediante la investigación científica y la creación de un prototipo de jardín de plantas que purifique el aire del aula.</p></div><div class="info-box"><strong>Cómo se trabajó</strong><p>El grupo exploró la presencia del aire, realizó muestras de polvo, observó plantas, decoró macetas y participó en la construcción del jardín vertical.</p></div><div class="info-box"><strong>Producto final</strong><p>Jardín vertical con plantas purificadoras y evidencias de investigación adaptadas al nivel de primer grado.</p></div></div><div class="gallery-block" data-gallery="g1"><h3>Galería de primer grado</h3><div class="gallery-tabs" data-tabs=""></div><div class="gallery-sections" data-sections=""><div class="gallery-loading">Cargando evidencias...</div></div></div></div>
+</article>
+<article class="project-detail" id="g2">
+<div class="detail-hero"><div><span class="eyebrow">2.º grado · ABI-STEAM</span><h3>RespiraTech: Pequeños guardianes del aire</h3><p>El alumnado investigó plantas purificadoras y elaboró un prototipo ecológico con materiales reciclables y foami moldeable.</p></div><div class="detail-meta"><div class="meta-box"><strong>Producto</strong><span>Purificadores de plantas</span></div><div class="meta-box"><strong>Participantes</strong><span>1 normalista</span></div><div class="meta-box"><strong>Grupo</strong><span>2.º A</span></div><div class="meta-box"><strong>Estado</strong><span>Con información completa</span></div></div></div>
+<div class="detail-body"><div class="info-grid"><div class="info-box"><strong>Problemática</strong><p>Existe poco conocimiento sobre las plantas que ayudan a purificar el aire y su importancia para el cuidado del medio ambiente.</p></div><div class="info-box"><strong>Propósito</strong><p>Investigar plantas que contribuyen a la purificación del aire, analizar su importancia y elaborar un prototipo ecológico llamado RespiraTech.</p></div><div class="info-box"><strong>Cómo se trabajó</strong><p>Se observaron videos de Ariel, se investigaron plantas purificadoras, se elaboraron bocetos, se clasificaron materiales reciclables y se representaron plantas mediante producciones artísticas.</p></div><div class="info-box"><strong>Producto final</strong><p>Purificador ecológico con materiales reciclables, foami moldeable y comunicación oral/escrita sobre el cuidado del aire.</p></div></div><div class="gallery-block" data-gallery="g2"><h3>Galería de segundo grado</h3><div class="gallery-tabs" data-tabs=""></div><div class="gallery-sections" data-sections=""><div class="gallery-loading">Cargando evidencias...</div></div></div></div>
+</article>
+<article class="project-detail" id="g3">
+<div class="detail-hero"><div><span class="eyebrow">3.º grado · ABPC + STEAM</span><h3>RespiraTech: Semáforo de calidad del aire</h3><p>Un semáforo físico comunica si el aire está en verde, amarillo o rojo, apoyándose en un instrumento real de detección usado por el docente normalista.</p></div><div class="detail-meta"><div class="meta-box"><strong>Producto</strong><span>Semáforo del aire</span></div><div class="meta-box"><strong>Participantes</strong><span>1 normalista</span></div><div class="meta-box"><strong>Grupo</strong><span>3.º A</span></div><div class="meta-box"><strong>Estado</strong><span>Con evidencias</span></div></div></div>
+<div class="detail-body"><div class="info-grid"><div class="info-box"><strong>Problemática</strong><p>En la zona metropolitana de Monterrey la calidad del aire suele empeorar por actividades humanas y condiciones del entorno; esto también afecta a las y los estudiantes.</p></div><div class="info-box"><strong>Propósito</strong><p>Que el alumnado indague causas, consecuencias y acciones para mejorar o cuidar el aire, y desarrolle un prototipo STEAM: un semáforo de calidad del aire.</p></div><div class="info-box"><strong>Cómo se trabajó</strong><p>Se investigaron causas y consecuencias, se acordaron reglas para los colores del semáforo, se diseñó el prototipo y se relacionó con lecturas reales del instrumento docente.</p></div><div class="info-box"><strong>Producto final</strong><p>Semáforo con sistema de engranaje que los alumnos giran según el resultado del detector de calidad del aire.</p></div></div><div class="gallery-block" data-gallery="g3"><h3>Galería de tercer grado</h3><div class="gallery-tabs" data-tabs=""></div><div class="gallery-sections" data-sections=""><div class="gallery-loading">Cargando evidencias...</div></div></div></div>
+</article>
+<article class="project-detail" id="g4">
+<div class="detail-hero"><div><span class="eyebrow">4.º grado · ABI-STEAM</span><h3>Wall-e y su planta al rescate</h3><p>El alumnado construyó un robot con mecanismo de riego para una planta purificadora de aire, alimentado con energía solar.</p></div><div class="detail-meta"><div class="meta-box"><strong>Producto</strong><span>Robot regador solar</span></div><div class="meta-box"><strong>Participantes</strong><span>3 normalistas</span></div><div class="meta-box"><strong>Grado</strong><span>4.º grado</span></div><div class="meta-box"><strong>Estado</strong><span>Con evidencias</span></div></div></div>
+<div class="detail-body"><div class="info-grid"><div class="info-box"><strong>Problemática</strong><p>La calidad del aire en el área metropolitana ha avanzado a niveles preocupantes, amenazando la salud de los estudiantes.</p></div><div class="info-box"><strong>Propósito</strong><p>Construir un robot con un mecanismo que riegue una planta purificadora de aire, alimentado con energía solar, para fortalecer habilidades matemáticas, botánicas y artísticas.</p></div><div class="info-box"><strong>Cómo se trabajó</strong><p>Se introdujo la problemática, se investigaron alternativas con plantas, se organizaron materiales, se diseñó el robot y se vinculó el prototipo con energía solar.</p></div><div class="info-box"><strong>Producto final</strong><p>Robot inspirado en Wall-e que cuida una planta purificadora y representa una solución creativa ante la mala calidad del aire.</p></div></div><div class="gallery-block" data-gallery="g4"><h3>Galería de cuarto grado</h3><div class="gallery-tabs" data-tabs=""></div><div class="gallery-sections" data-sections=""><div class="gallery-loading">Cargando evidencias...</div></div></div></div>
+</article>
+</div>
+</section>
+<section id="documentacion">
+<div class="wrap">
+<div class="section-head">
+<div>
+<span class="eyebrow">Planeaciones y evaluaciones</span>
+<h2>Documentación del proyecto</h2>
+</div>
+<p>Este apartado concentra planeaciones, rúbricas, evaluaciones y documentos de apoyo para que el sitio muestre el proceso completo, no solo las fotografías finales.</p>
+</div>
+<div class="doc-grid">
+<button class="doc-card optional-doc" data-doc="assets/planeaciones/planeacion-grado1.pdf" data-title="Planeación 1.º grado" type="button">
+<div><strong>Planeación 1.º grado</strong><p>Guardianes del Aire: jardín vertical y plantas purificadoras.</p></div><span>Abrir documento</span>
+</button>
+<button class="doc-card optional-doc" data-doc="assets/planeaciones/planeacion-grado2.pdf" data-title="Planeación 2.º grado" type="button">
+<div><strong>Planeación 2.º grado</strong><p>Pequeños guardianes del aire: purificadores ecológicos.</p></div><span>Abrir documento</span>
+</button>
+<button class="doc-card optional-doc" data-doc="assets/planeaciones/planeacion-grado3.pdf" data-title="Planeación 3.º grado" type="button">
+<div><strong>Planeación 3.º grado</strong><p>Semáforo de calidad del aire con apoyo de detector real.</p></div><span>Abrir documento</span>
+</button>
+<button class="doc-card optional-doc" data-doc="assets/planeaciones/planeacion-grado4.pdf" data-title="Planeación 4.º grado" type="button">
+<div><strong>Planeación 4.º grado</strong><p>Wall-e y su planta al rescate: robot regador solar.</p></div><span>Abrir documento</span>
+</button>
+<button class="doc-card optional-doc" data-doc="assets/evaluaciones/evaluacion-grado1.pdf" data-title="Evaluación 1.º grado" type="button">
+<div><strong>Evaluación 1.º grado</strong><p>Instrumentos y evidencias de evaluación del jardín vertical.</p></div><span>Abrir evaluación</span>
+</button>
+<button class="doc-card optional-doc" data-doc="assets/evaluaciones/evaluacion-grado2.pdf" data-title="Evaluación 2.º grado" type="button">
+<div><strong>Evaluación 2.º grado</strong><p>Instrumentos y evidencias de evaluación del purificador ecológico.</p></div><span>Abrir evaluación</span>
+</button>
+<button class="doc-card optional-doc" data-doc="assets/evaluaciones/evaluacion-grado3.pdf" data-title="Evaluación 3.º grado" type="button">
+<div><strong>Evaluación 3.º grado</strong><p>Instrumentos y evidencias de evaluación del semáforo de calidad del aire.</p></div><span>Abrir evaluación</span>
+</button>
+<button class="doc-card optional-doc" data-doc="assets/evaluaciones/evaluacion-grado4.pdf" data-title="Evaluación 4.º grado" type="button">
+<div><strong>Evaluación 4.º grado</strong><p>Instrumentos y evidencias de evaluación del robot regador solar.</p></div><span>Abrir evaluación</span>
+</button>
+<button class="doc-card optional-doc" data-doc="assets/evaluaciones/rubricas-respiratech.pdf" data-title="Rúbricas RespiraTech" type="button">
+<div><strong>Rúbricas RespiraTech</strong><p>Instrumentos de evaluación, exposición, logística, escuelas y sitio.</p></div><span>Abrir rúbricas</span>
+</button>
+<a class="doc-card" href="#evidencias">
+<div><strong>Fotografías y evidencias</strong><p>Galerías de construcción, exposición, prototipos, alumnos y materiales.</p></div><span>Ver evidencias</span>
+</a>
+</div>
+</div>
+</section>
+<section id="evidencias">
+<div class="wrap">
+<div class="section-head"><div><span class="eyebrow">Banco multimedia</span><h2>Evidencias del proceso y exposición</h2></div><p>Esta sección funciona como una galería general para fotos, dibujos de Ariel, prototipos, stands y videos. Las imágenes se pueden abrir en grande.</p></div>
+<div class="media-grid" id="evidenceGrid"><div class="gallery-loading">Cargando banco multimedia...</div></div>
+</div>
+</section>
+</main>
+<section id="cintermex">
+<div class="wrap">
+<div class="section-head">
+<div>
+<span class="eyebrow">Feria RespiraTech</span>
+<h2>Exposición Cintermex</h2>
+</div>
+<p>La feria muestra la importancia del proyecto institucional: varias escuelas primarias, acompañadas por normalistas de la Escuela Normal Miguel F. Martínez, presentan cómo investigaron la calidad del aire y cómo transformaron esa problemática en acciones, evidencias y prototipos para la comunidad.</p>
+</div>
+<div class="fair-grid">
+<article class="fair-card">
+<h3>¿Por qué se presentan estos proyectos?</h3>
+<p>Porque permiten mostrar el proceso completo de aprendizaje: se detecta una problemática real, se investigan sus causas y consecuencias, se construye un prototipo, se prueba, se mejora y se comunica a otros. La exposición no busca enseñar solo un producto terminado, sino evidenciar cómo niñas y niños comprendieron el cuidado del aire y propusieron acciones posibles desde su escuela.</p>
+</article>
+<article class="fair-card">
+<h3>¿Cómo colabora esta primaria?</h3>
+<p>La primaria Alberto Fernández Ruiloba aporta una experiencia concreta dentro del proyecto institucional: sus grupos de 1.º, 2.º, 3.º y 4.º grado muestran distintas rutas para atender el mismo problema ambiental. Así, esta página funciona como una ventana de evidencias de una escuela participante dentro de una presentación más amplia de RespiraTech.</p>
+</article>
+</div>
+<div class="fair-card" style="margin-top: 22px;">
+<h3>Sentido de la feria</h3>
+<div class="purpose-list">
+<div class="purpose-item"><b>1</b><p><strong>Visibilizar el proceso:</strong> planeaciones, actividades, fotografías, registros y decisiones tomadas durante cada fase.</p></div>
+<div class="purpose-item"><b>2</b><p><strong>Explicar los prototipos:</strong> cómo funcionan, para qué sirven, qué mejoras tuvieron y cómo responden a la calidad del aire.</p></div>
+<div class="purpose-item"><b>3</b><p><strong>Comunicar aprendizajes:</strong> que el alumnado explique causas, consecuencias, acciones de cuidado y compromisos con su escuela.</p></div>
+<div class="purpose-item"><b>4</b><p><strong>Mostrar una red de escuelas:</strong> cada primaria participante aporta una experiencia distinta al mismo proyecto institucional RespiraTech.</p></div>
+<div class="purpose-item"><b>5</b><p><strong>Fortalecer la formación normalista:</strong> las y los normalistas documentan intervención, evaluación, evidencias, prototipos y socialización comunitaria.</p></div>
+</div>
+</div>
+</div>
+</section>
+<footer><div class="wrap"><h3>RespiraTech · Exposición Cintermex</h3><p>Proyecto institucional de la Escuela Normal Miguel F. Martínez orientado al cuidado del aire, la investigación escolar, la evaluación formativa y la creación de prototipos STEAM.</p></div></footer>
+<div aria-hidden="true" class="lightbox" id="lightbox">
+<div class="lightbox-content">
+<button aria-label="Cerrar" class="lightbox-close" type="button">×</button>
+<div id="lightboxMedia"></div>
+<div class="lightbox-caption" id="lightboxCaption"></div>
+</div>
+</div>
+<div aria-hidden="true" class="doc-viewer" id="docViewer">
+<div class="doc-viewer-box">
+<div class="doc-viewer-head">
+<strong id="docViewerTitle">Documento</strong>
+<div>
+<a href="#" id="docViewerDownload" rel="noopener" target="_blank">Abrir en otra pestaña</a>
+<button aria-label="Cerrar" class="doc-viewer-close" type="button">×</button>
+</div>
+</div>
+<iframe class="doc-frame" id="docFrame" title="Vista de documento"></iframe>
+</div>
+</div>
+<script>
     const projectCards = document.querySelectorAll('.project-card');
     const projectDetails = document.querySelectorAll('.project-detail');
 
@@ -996,26 +1016,81 @@
       });
     });
 
-    document.querySelectorAll('.gallery-block').forEach(block => {
-      const tabs = block.querySelectorAll('.gallery-tab');
-      const sections = block.querySelectorAll('.gallery-section');
-      tabs.forEach(tab => {
-        tab.addEventListener('click', () => {
-          const type = tab.dataset.type;
-          tabs.forEach(t => t.classList.remove('active'));
-          sections.forEach(s => s.classList.remove('active'));
-          tab.classList.add('active');
-          block.querySelector(`.gallery-section[data-type="${type}"]`).classList.add('active');
-        });
-      });
-    });
+    const imageExtensions = ['jpg', 'jpeg', 'png', 'webp', 'gif'];
+    const videoExtensions = ['mp4', 'webm', 'mov'];
+    const audioExtensions = ['mp3', 'wav', 'ogg'];
 
-    const optionalDocs = document.querySelectorAll('.optional-doc');
+    const galleryConfig = {
+      g1: {
+        categories: [
+          { id: 'construccion', label: 'Construcción', prefix: 'assets/grado1/construccion-', count: 12, captions: ['Construcción del jardín vertical', 'Preparación de plantas', 'Cuidado y riego', 'Trabajo en equipo', 'Organización del jardín', 'Evidencia del proceso'] },
+          { id: 'exposicion', label: 'Exposición', prefix: 'assets/grado1/exposicion-', count: 8, captions: ['Exposición de primer grado', 'Stand del jardín vertical', 'Presentación del producto', 'Participación del alumnado'] },
+          { id: 'videos', label: 'Videos', videos: [] }
+        ]
+      },
+      g2: {
+        categories: [
+          { id: 'construccion', label: 'Construcción', prefix: 'assets/grado2/construccion-', count: 12, captions: ['Proceso de purificadores', 'Bocetos y materiales', 'Foami y plantas', 'Trabajo en aula', 'Construcción del prototipo', 'Organización de materiales', 'Actividad del grupo'] },
+          { id: 'exposicion', label: 'Exposición', prefix: 'assets/grado2/exposicion-', count: 6, captions: ['Exposición de segundo grado', 'Producto terminado', 'Explicación del alumnado'] },
+          { id: 'videos', label: 'Videos', videos: [] }
+        ]
+      },
+      g3: {
+        categories: [
+          { id: 'construccion', label: 'Construcción', prefix: 'assets/grado3/construccion-', count: 12, captions: ['Construcción del semáforo', 'Prototipo del semáforo', 'Proceso del detector', 'Materiales del prototipo'] },
+          { id: 'exposicion', label: 'Exposición', prefix: 'assets/grado3/exposicion-', count: 8, captions: ['Exposición del semáforo de calidad del aire', 'Alumnado presentando el proyecto', 'Carteles y fichas', 'Demostración del detector'] },
+          { id: 'videos', label: 'Videos', videos: [] }
+        ]
+      },
+      g4: {
+        categories: [
+          { id: 'construccion', label: 'Construcción', prefix: 'assets/grado4/construccion-', count: 20, captions: ['Construcción del prototipo Wall-e', 'Armado de piezas', 'Diseño del cuerpo', 'Trabajo en equipo', 'Pruebas del mecanismo', 'Detalles del prototipo', 'Panel solar y conexiones', 'Sistema de riego', 'Ruedas y estructura', 'Decoración final', 'Ajustes del robot', 'Ensamble del cuerpo', 'Integración de planta', 'Revisión del prototipo', 'Últimos detalles', 'Producto en proceso'] },
+          { id: 'exposicion', label: 'Exposición', prefix: 'assets/grado4/exposicion-', count: 8, captions: ['Presentación del proyecto', 'Alumnado explicando', 'Producto terminado', 'Stand de cuarto grado'] },
+          { id: 'videos', label: 'Videos', videos: [] }
+        ]
+      }
+    };
+
+    const evidenceItems = [
+      { base: 'assets/exposicion-general/arbol-01', caption: 'Árbol de la exposición general' },
+      { base: 'assets/mascota/ariel-principal', caption: 'Ariel, guardián del aire' },
+      { base: 'assets/mascota/ariel-expresiones', caption: 'Expresiones de Ariel' },
+      { base: 'assets/mascota/ariel-enojado', caption: 'Ariel enojado' },
+      { base: 'assets/mascota/ariel-pensando', caption: 'Ariel pensando' },
+      { base: 'assets/mascota/ariel-sorprendido', caption: 'Ariel sorprendido' },
+      { base: 'assets/mascota/ariel-wall-e', caption: 'Ariel con Wall-e' },
+      { base: 'assets/grado1/exposicion-01', caption: 'Exposición de primer grado' },
+      { base: 'assets/grado2/exposicion-01', caption: 'Exposición de segundo grado' },
+      { base: 'assets/grado3/exposicion-01', caption: 'Exposición de tercer grado' },
+      { base: 'assets/grado4/exposicion-01', caption: 'Exposición de cuarto grado' },
+      { base: 'assets/grado4/construccion-01', caption: 'Construcción del prototipo Wall-e' }
+    ];
+
+    /*
+      Para agregar videos de Drive después, coloca enlaces aquí:
+      galleryConfig.g1.categories.find(c => c.id === 'videos').videos = [
+        { title: 'Video de presentación', url: 'PEGA_AQUI_LINK_DE_DRIVE' }
+      ];
+    */
+
+    const lightbox = document.getElementById('lightbox');
+    const lightboxMedia = document.getElementById('lightboxMedia');
+    const lightboxCaption = document.getElementById('lightboxCaption');
+    const closeLightbox = document.querySelector('.lightbox-close');
+
     const docViewer = document.getElementById('docViewer');
     const docFrame = document.getElementById('docFrame');
     const docViewerTitle = document.getElementById('docViewerTitle');
     const docViewerDownload = document.getElementById('docViewerDownload');
     const closeDocViewer = document.querySelector('.doc-viewer-close');
+
+    function padNumber(number) {
+      return String(number).padStart(2, '0');
+    }
+
+    function getPathWithoutExtension(path) {
+      return path.replace(/\.(png|jpg|jpeg|webp|gif|mp4|webm|mov|mp3|wav|ogg)(\?.*)?$/i, '');
+    }
 
     async function fileExists(path) {
       if (window.location.protocol === 'file:') return true;
@@ -1027,96 +1102,174 @@
       }
     }
 
-    optionalDocs.forEach(async (button) => {
-      const path = button.dataset.doc;
-      const exists = await fileExists(path);
-      if (!exists) {
-        button.remove();
-        return;
+    async function findExistingFile(base, extensions = imageExtensions) {
+      const cleanBase = getPathWithoutExtension(base);
+      for (const ext of extensions) {
+        const path = `${cleanBase}.${ext}`;
+        if (await fileExists(path)) return path;
       }
-      button.addEventListener('click', () => {
-        docViewerTitle.textContent = button.dataset.title || 'Documento RespiraTech';
-        docFrame.src = path;
-        docViewerDownload.href = path;
-        docViewer.classList.add('active');
-        docViewer.setAttribute('aria-hidden', 'false');
+      return null;
+    }
+
+    function createImageCard(path, caption) {
+      const card = document.createElement('div');
+      card.className = 'media-card';
+
+      const img = document.createElement('img');
+      img.src = path;
+      img.alt = caption;
+      img.loading = 'lazy';
+
+      const label = document.createElement('span');
+      label.className = 'media-caption';
+      label.textContent = caption;
+
+      img.addEventListener('click', () => openLightbox(path, caption, 'image'));
+      card.append(img, label);
+      return card;
+    }
+
+    function drivePreviewUrl(url) {
+      const match = url.match(/\/d\/([^/]+)/) || url.match(/[?&]id=([^&]+)/);
+      if (match) return `https://drive.google.com/file/d/${match[1]}/preview`;
+      return url;
+    }
+
+    function createVideoLinkCard(item) {
+      const card = document.createElement('div');
+      card.className = 'media-card video-card';
+      card.tabIndex = 0;
+      card.innerHTML = `<div><strong>${item.title}</strong><span>Abrir video</span></div>`;
+      const open = () => openDocumentViewer(item.title, drivePreviewUrl(item.url), item.url);
+      card.addEventListener('click', open);
+      card.addEventListener('keydown', event => {
+        if (event.key === 'Enter' || event.key === ' ') open();
       });
-    });
-
-    function closeDocumentViewer() {
-      docViewer.classList.remove('active');
-      docViewer.setAttribute('aria-hidden', 'true');
-      docFrame.src = '';
+      return card;
     }
 
-    closeDocViewer.addEventListener('click', closeDocumentViewer);
-    docViewer.addEventListener('click', (event) => {
-      if (event.target === docViewer) closeDocumentViewer();
-    });
-
-    const lightbox = document.getElementById('lightbox');
-    const lightboxMedia = document.getElementById('lightboxMedia');
-    const lightboxCaption = document.getElementById('lightboxCaption');
-    const closeLightbox = document.querySelector('.lightbox-close');
-
-    function getPathWithoutExtension(path) {
-      return path.replace(/\.(png|jpg|jpeg|webp|gif|mp4|webm|mov|mp3|wav|ogg)(\?.*)?$/i, '');
-    }
-
-    function makeMediaFlexible(media) {
-      const imageExtensions = ['.jpg', '.jpeg', '.png', '.webp', '.gif'];
-      const videoExtensions = ['.mp4', '.webm', '.mov'];
-      const audioExtensions = ['.mp3', '.wav', '.ogg'];
-      const current = media.getAttribute('src');
-      if (!current) return;
-
-      const extensions = media.tagName.toLowerCase() === 'video'
-        ? videoExtensions
-        : media.tagName.toLowerCase() === 'audio'
-          ? audioExtensions
-          : imageExtensions;
-
-      const base = getPathWithoutExtension(current);
-      const originalExtensionMatch = current.match(/\.(png|jpg|jpeg|webp|gif|mp4|webm|mov|mp3|wav|ogg)(\?.*)?$/i);
-      const originalExtension = originalExtensionMatch ? '.' + originalExtensionMatch[1].toLowerCase() : '';
-      const tries = [originalExtension, ...extensions].filter((ext, index, arr) => ext && arr.indexOf(ext) === index);
-      let index = 0;
-
-      media.addEventListener('error', () => {
-        index += 1;
-        if (index < tries.length) {
-          media.src = base + tries[index];
-        } else {
-          media.closest('.media-card')?.classList.add('empty-media');
-          media.closest('.media-card')?.insertAdjacentText('beforeend', ' Archivo pendiente: ' + base.split('/').pop());
-          media.remove();
+    async function createMediaCardsFromPrefix(category) {
+      const cards = [];
+      for (let i = 1; i <= category.count; i++) {
+        const base = `${category.prefix}${padNumber(i)}`;
+        const path = await findExistingFile(base, imageExtensions);
+        if (path) {
+          const caption = category.captions?.[i - 1] || `${category.label} ${i}`;
+          cards.push(createImageCard(path, caption));
         }
-      });
+      }
+      return cards;
     }
 
-    document.querySelectorAll('img, video, audio').forEach(makeMediaFlexible);
+    async function renderGalleries() {
+      for (const [galleryId, gallery] of Object.entries(galleryConfig)) {
+        const block = document.querySelector(`.gallery-block[data-gallery="${galleryId}"]`);
+        if (!block) continue;
 
-    document.querySelectorAll('.media-card img, .media-card video').forEach(media => {
-      media.addEventListener('click', () => {
-        const caption = media.parentElement.querySelector('.media-caption')?.textContent || media.alt || 'Evidencia RespiraTech';
-        lightboxMedia.innerHTML = '';
-        if (media.tagName.toLowerCase() === 'video') {
-          const video = document.createElement('video');
-          video.src = media.currentSrc || media.src;
-          video.controls = true;
-          video.autoplay = true;
-          lightboxMedia.appendChild(video);
-        } else {
-          const img = document.createElement('img');
-          img.src = media.currentSrc || media.src;
-          img.alt = caption;
-          lightboxMedia.appendChild(img);
+        const tabsContainer = block.querySelector('[data-tabs]');
+        const sectionsContainer = block.querySelector('[data-sections]');
+        tabsContainer.innerHTML = '';
+        sectionsContainer.innerHTML = '';
+
+        let firstVisible = true;
+        let visibleCategories = 0;
+
+        for (const category of gallery.categories) {
+          const grid = document.createElement('div');
+          grid.className = 'media-grid';
+
+          if (category.videos) {
+            category.videos.forEach(video => grid.appendChild(createVideoLinkCard(video)));
+          } else if (category.prefix) {
+            const cards = await createMediaCardsFromPrefix(category);
+            cards.forEach(card => grid.appendChild(card));
+          }
+
+          if (!grid.children.length) continue;
+
+          const tab = document.createElement('button');
+          tab.className = 'gallery-tab';
+          tab.type = 'button';
+          tab.dataset.type = category.id;
+          tab.textContent = category.label;
+
+          const section = document.createElement('div');
+          section.className = 'gallery-section';
+          section.dataset.type = category.id;
+          section.appendChild(grid);
+
+          if (firstVisible) {
+            tab.classList.add('active');
+            section.classList.add('active');
+            firstVisible = false;
+          }
+
+          tab.addEventListener('click', () => {
+            tabsContainer.querySelectorAll('.gallery-tab').forEach(t => t.classList.remove('active'));
+            sectionsContainer.querySelectorAll('.gallery-section').forEach(s => s.classList.remove('active'));
+            tab.classList.add('active');
+            section.classList.add('active');
+          });
+
+          tabsContainer.appendChild(tab);
+          sectionsContainer.appendChild(section);
+          visibleCategories++;
         }
-        lightboxCaption.textContent = caption;
-        lightbox.classList.add('active');
-        lightbox.setAttribute('aria-hidden', 'false');
-      });
-    });
+
+        if (!visibleCategories) block.classList.add('is-empty');
+      }
+    }
+
+    async function renderEvidenceGrid() {
+      const grid = document.getElementById('evidenceGrid');
+      if (!grid) return;
+      grid.innerHTML = '';
+      const usedPaths = new Set();
+
+      async function addEvidence(base, caption) {
+        const path = await findExistingFile(base, imageExtensions);
+        if (path && !usedPaths.has(path)) {
+          usedPaths.add(path);
+          grid.appendChild(createImageCard(path, caption));
+        }
+      }
+
+      for (const item of evidenceItems) {
+        await addEvidence(item.base, item.caption);
+      }
+
+      for (const [galleryId, gallery] of Object.entries(galleryConfig)) {
+        const gradeName = galleryId.replace('g1', '1.º grado').replace('g2', '2.º grado').replace('g3', '3.º grado').replace('g4', '4.º grado');
+        for (const category of gallery.categories) {
+          if (!category.prefix) continue;
+          for (let i = 1; i <= category.count; i++) {
+            const caption = `${gradeName} · ${category.label.toLowerCase()} ${padNumber(i)}`;
+            await addEvidence(`${category.prefix}${padNumber(i)}`, caption);
+          }
+        }
+      }
+
+      if (!grid.children.length) grid.classList.add('is-empty');
+    }
+
+    function openLightbox(src, caption, type = 'image') {
+      lightboxMedia.innerHTML = '';
+      if (type === 'video') {
+        const video = document.createElement('video');
+        video.src = src;
+        video.controls = true;
+        video.autoplay = true;
+        lightboxMedia.appendChild(video);
+      } else {
+        const img = document.createElement('img');
+        img.src = src;
+        img.alt = caption;
+        lightboxMedia.appendChild(img);
+      }
+      lightboxCaption.textContent = caption;
+      lightbox.classList.add('active');
+      lightbox.setAttribute('aria-hidden', 'false');
+    }
 
     function closeViewer() {
       lightbox.classList.remove('active');
@@ -1124,16 +1277,49 @@
       lightboxMedia.innerHTML = '';
     }
 
+    function openDocumentViewer(title, previewPath, downloadPath = previewPath) {
+      docViewerTitle.textContent = title || 'Documento RespiraTech';
+      docFrame.src = previewPath;
+      docViewerDownload.href = downloadPath;
+      docViewer.classList.add('active');
+      docViewer.setAttribute('aria-hidden', 'false');
+    }
+
+    function closeDocumentViewer() {
+      docViewer.classList.remove('active');
+      docViewer.setAttribute('aria-hidden', 'true');
+      docFrame.src = '';
+    }
+
+    document.querySelectorAll('.optional-doc').forEach(async (button) => {
+      const path = button.dataset.doc;
+      const exists = await fileExists(path);
+      if (!exists) {
+        button.remove();
+        return;
+      }
+      button.addEventListener('click', () => openDocumentViewer(button.dataset.title, path, path));
+    });
+
     closeLightbox.addEventListener('click', closeViewer);
     lightbox.addEventListener('click', (event) => {
       if (event.target === lightbox) closeViewer();
     });
+
+    closeDocViewer.addEventListener('click', closeDocumentViewer);
+    docViewer.addEventListener('click', (event) => {
+      if (event.target === docViewer) closeDocumentViewer();
+    });
+
     window.addEventListener('keydown', (event) => {
       if (event.key === 'Escape') {
         closeViewer();
         closeDocumentViewer();
       }
     });
-  </script>
+
+    renderGalleries();
+    renderEvidenceGrid();
+</script>
 </body>
 </html>
