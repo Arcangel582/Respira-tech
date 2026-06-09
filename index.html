@@ -762,6 +762,74 @@
       font-family: inherit;
       cursor: pointer;
     }
+
+/* Colores por proyecto */
+.project-detail.theme-g1 {
+  --project-dark: #1f5b31;
+  --project-main: #3f8f43;
+  --project-soft: #eaf6ec;
+}
+
+.project-detail.theme-g2 {
+  --project-dark: #14596a;
+  --project-main: #2f9bb0;
+  --project-soft: #e8f6f9;
+}
+
+.project-detail.theme-g3 {
+  --project-dark: #743325;
+  --project-main: #a34a34;
+  --project-soft: #f8ece8;
+}
+
+.project-detail.theme-g4 {
+  --project-dark: #66570c;
+  --project-main: #c39a08;
+  --project-soft: #fbf5dc;
+}
+
+/* Encabezado grande del proyecto */
+.project-detail[class*="theme-g"] .detail-hero {
+  background: linear-gradient(145deg, var(--project-dark), var(--project-main));
+}
+
+/* Etiqueta del grado dentro del encabezado */
+.project-detail[class*="theme-g"] .eyebrow {
+  background: color-mix(in srgb, var(--project-main) 30%, white);
+  color: #0d2f1d;
+}
+
+/* Cajas de Producto, Participantes, Grupo y Estado */
+.project-detail[class*="theme-g"] .meta-box {
+  background: color-mix(in srgb, var(--project-main) 70%, white);
+  border-color: color-mix(in srgb, var(--project-main) 45%, white);
+}
+
+.project-detail[class*="theme-g"] .gallery-tab.active {
+  background: var(--project-dark);
+  border-color: var(--project-dark);
+  color: white;
+}
+
+.project-detail[class*="theme-g"] .gallery-tab {
+  border-color: color-mix(in srgb, var(--project-main) 30%, white);
+  color: var(--project-dark);
+}
+
+.project-detail[class*="theme-g"] .gallery-tab:hover {
+  background: var(--project-soft);
+  border-color: var(--project-main);
+}
+
+/* Títulos dentro del proyecto */
+.project-detail[class*="theme-g"] .gallery-block h3 {
+  color: var(--project-dark);
+}
+
+.project-detail[class*="theme-g"] .media-caption {
+  background: color-mix(in srgb, var(--project-dark) 88%, black);
+}
+    
 </style>
 </head>
 <body>
@@ -884,19 +952,19 @@
 <article class="project-card red" data-project="g3"><span class="tag">3.º grado</span><div class="emoji">🚦</div><h3>Semáforo del aire</h3><p>Prototipo para comunicar la calidad del aire con colores.</p><div class="bottom"><span>Ver proyecto</span><span>→</span></div></article>
 <article class="project-card yellow" data-project="g4"><span class="tag">4.º grado</span><div class="emoji">🤖</div><h3>Wall-e al rescate</h3><p>Robot que riega una planta purificadora con energía solar.</p><div class="bottom"><span>Ver proyecto</span><span>→</span></div></article>
 </div>
-<article class="project-detail active" id="g1">
+<article class="project-detail theme-g1 active" id="g1">
 <div class="detail-hero"><div><span class="eyebrow">1.º grado · ABPC</span><h3>Guardianes del Aire: Proyecto RespiraTEC</h3><p>El alumnado identificó contaminantes invisibles y construyó un jardín de plantas para favorecer la conciencia ambiental.</p></div><div class="detail-meta"><div class="meta-box"><strong>Producto</strong><span>Jardín vertical</span></div><div class="meta-box"><strong>Participantes</strong><span>3 normalistas</span></div><div class="meta-box"><strong>Escenario</strong><span>Aula y escuela</span></div><div class="meta-box"><strong>Estado</strong><span>Con información base</span></div></div></div>
 <div class="detail-body"><div class="info-grid"><div class="info-box"><strong>Problemática</strong><p>La presencia de polvo y contaminantes invisibles en el aire de la escuela afecta la salud de los alumnos, quienes desconocen cómo identificar y mejorar la calidad del aire en su salón.</p></div><div class="info-box"><strong>Propósito</strong><p>Fomentar la conciencia ambiental mediante la investigación científica y la creación de un prototipo de jardín de plantas que purifique el aire del aula.</p></div><div class="info-box"><strong>Cómo se trabajó</strong><p>El grupo exploró la presencia del aire, realizó muestras de polvo, observó plantas, decoró macetas y participó en la construcción del jardín vertical.</p></div><div class="info-box"><strong>Producto final</strong><p>Jardín vertical con plantas purificadoras y evidencias de investigación adaptadas al nivel de primer grado.</p></div></div><div class="gallery-block" data-gallery="g1"><h3>Galería de primer grado</h3><div class="gallery-tabs" data-tabs=""></div><div class="gallery-sections" data-sections=""><div class="gallery-loading">Cargando evidencias...</div></div></div></div>
 </article>
-<article class="project-detail" id="g2">
+<article class="project-detail theme-g2" id="g2">
 <div class="detail-hero"><div><span class="eyebrow">2.º grado · ABI-STEAM</span><h3>RespiraTech: Pequeños guardianes del aire</h3><p>El alumnado investigó plantas purificadoras y elaboró un prototipo ecológico con materiales reciclables y foami moldeable.</p></div><div class="detail-meta"><div class="meta-box"><strong>Producto</strong><span>Purificadores de plantas</span></div><div class="meta-box"><strong>Participantes</strong><span>1 normalista</span></div><div class="meta-box"><strong>Grupo</strong><span>2.º A</span></div><div class="meta-box"><strong>Estado</strong><span>Con información completa</span></div></div></div>
 <div class="detail-body"><div class="info-grid"><div class="info-box"><strong>Problemática</strong><p>Existe poco conocimiento sobre las plantas que ayudan a purificar el aire y su importancia para el cuidado del medio ambiente.</p></div><div class="info-box"><strong>Propósito</strong><p>Investigar plantas que contribuyen a la purificación del aire, analizar su importancia y elaborar un prototipo ecológico llamado RespiraTech.</p></div><div class="info-box"><strong>Cómo se trabajó</strong><p>Se observaron videos de Ariel, se investigaron plantas purificadoras, se elaboraron bocetos, se clasificaron materiales reciclables y se representaron plantas mediante producciones artísticas.</p></div><div class="info-box"><strong>Producto final</strong><p>Purificador ecológico con materiales reciclables, foami moldeable y comunicación oral/escrita sobre el cuidado del aire.</p></div></div><div class="gallery-block" data-gallery="g2"><h3>Galería de segundo grado</h3><div class="gallery-tabs" data-tabs=""></div><div class="gallery-sections" data-sections=""><div class="gallery-loading">Cargando evidencias...</div></div></div></div>
 </article>
-<article class="project-detail" id="g3">
+<article class="project-detail theme-g3" id="g3">
 <div class="detail-hero"><div><span class="eyebrow">3.º grado · ABPC + STEAM</span><h3>RespiraTech: Semáforo de calidad del aire</h3><p>Un semáforo físico comunica si el aire está en verde, amarillo o rojo, apoyándose en un instrumento real de detección usado por el docente normalista.</p></div><div class="detail-meta"><div class="meta-box"><strong>Producto</strong><span>Semáforo del aire</span></div><div class="meta-box"><strong>Participantes</strong><span>1 normalista</span></div><div class="meta-box"><strong>Grupo</strong><span>3.º A</span></div><div class="meta-box"><strong>Estado</strong><span>Con evidencias</span></div></div></div>
 <div class="detail-body"><div class="info-grid"><div class="info-box"><strong>Problemática</strong><p>En la zona metropolitana de Monterrey la calidad del aire suele empeorar por actividades humanas y condiciones del entorno; esto también afecta a las y los estudiantes.</p></div><div class="info-box"><strong>Propósito</strong><p>Que el alumnado indague causas, consecuencias y acciones para mejorar o cuidar el aire, y desarrolle un prototipo STEAM: un semáforo de calidad del aire.</p></div><div class="info-box"><strong>Cómo se trabajó</strong><p>Se investigaron causas y consecuencias, se acordaron reglas para los colores del semáforo, se diseñó el prototipo y se relacionó con lecturas reales del instrumento docente.</p></div><div class="info-box"><strong>Producto final</strong><p>Semáforo con sistema de engranaje que los alumnos giran según el resultado del detector de calidad del aire.</p></div></div><div class="gallery-block" data-gallery="g3"><h3>Galería de tercer grado</h3><div class="gallery-tabs" data-tabs=""></div><div class="gallery-sections" data-sections=""><div class="gallery-loading">Cargando evidencias...</div></div></div></div>
 </article>
-<article class="project-detail" id="g4">
+<article class="project-detail theme-g4" id="g4">
 <div class="detail-hero"><div><span class="eyebrow">4.º grado · ABI-STEAM</span><h3>Wall-e y su planta al rescate</h3><p>El alumnado construyó un robot con mecanismo de riego para una planta purificadora de aire, alimentado con energía solar.</p></div><div class="detail-meta"><div class="meta-box"><strong>Producto</strong><span>Robot regador solar</span></div><div class="meta-box"><strong>Participantes</strong><span>3 normalistas</span></div><div class="meta-box"><strong>Grado</strong><span>4.º grado</span></div><div class="meta-box"><strong>Estado</strong><span>Con evidencias</span></div></div></div>
 <div class="detail-body"><div class="info-grid"><div class="info-box"><strong>Problemática</strong><p>La calidad del aire en el área metropolitana ha avanzado a niveles preocupantes, amenazando la salud de los estudiantes.</p></div><div class="info-box"><strong>Propósito</strong><p>Construir un robot con un mecanismo que riegue una planta purificadora de aire, alimentado con energía solar, para fortalecer habilidades matemáticas, botánicas y artísticas.</p></div><div class="info-box"><strong>Cómo se trabajó</strong><p>Se introdujo la problemática, se investigaron alternativas con plantas, se organizaron materiales, se diseñó el robot y se vinculó el prototipo con energía solar.</p></div><div class="info-box"><strong>Producto final</strong><p>Robot inspirado en Wall-e que cuida una planta purificadora y representa una solución creativa ante la mala calidad del aire.</p></div></div><div class="gallery-block" data-gallery="g4"><h3>Galería de cuarto grado</h3><div class="gallery-tabs" data-tabs=""></div><div class="gallery-sections" data-sections=""><div class="gallery-loading">Cargando evidencias...</div></div></div></div>
 </article>
