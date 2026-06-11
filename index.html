@@ -830,6 +830,154 @@
   background: color-mix(in srgb, var(--project-dark) 88%, black);
 }
     
+
+
+    /* Mejoras profesionales: movimiento suave, QR, flechas y botón superior */
+    .reveal-on-scroll {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity .65s ease, transform .65s ease;
+    }
+
+    .reveal-on-scroll.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .qr-showcase {
+      grid-column: 1 / -1;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      gap: 24px;
+      margin-top: 22px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .qr-showcase::after {
+      content: "QR";
+      position: absolute;
+      right: 22px;
+      bottom: -34px;
+      font-size: 7rem;
+      font-weight: 1000;
+      color: rgba(23, 63, 42, .07);
+      line-height: 1;
+      pointer-events: none;
+    }
+
+    .qr-image-wrap {
+      position: relative;
+      z-index: 1;
+      width: 220px;
+      min-height: 220px;
+      display: grid;
+      place-items: center;
+      background: white;
+      border-radius: 28px;
+      padding: 18px;
+      border: 1px solid rgba(23, 63, 42, .14);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .qr-image-wrap img {
+      width: 180px;
+      height: 180px;
+      object-fit: contain;
+    }
+
+    .lightbox-nav {
+      position: absolute;
+      top: 50%;
+      z-index: 3;
+      transform: translateY(-50%);
+      width: 48px;
+      height: 64px;
+      border: none;
+      border-radius: 999px;
+      background: rgba(255,255,255,.88);
+      color: #111;
+      font-size: 2.4rem;
+      font-weight: 1000;
+      line-height: 1;
+      cursor: pointer;
+      box-shadow: 0 10px 30px rgba(0,0,0,.25);
+      transition: transform .2s ease, background .2s ease;
+    }
+
+    .lightbox-nav:hover {
+      background: white;
+      transform: translateY(-50%) scale(1.04);
+    }
+
+    .lightbox-nav[hidden] {
+      display: none;
+    }
+
+    .lightbox-prev { left: 14px; }
+    .lightbox-next { right: 14px; }
+
+    .back-to-top {
+      position: fixed;
+      right: 22px;
+      bottom: 22px;
+      z-index: 80;
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,.42);
+      background: var(--green-900);
+      color: white;
+      font-size: 1.4rem;
+      font-weight: 1000;
+      cursor: pointer;
+      box-shadow: var(--shadow);
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(18px);
+      transition: opacity .25s ease, transform .25s ease;
+    }
+
+    .back-to-top.visible {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateY(0);
+    }
+
+    .back-to-top:hover {
+      transform: translateY(-3px);
+    }
+
+    @media (max-width: 700px) {
+      .qr-showcase {
+        grid-template-columns: 1fr;
+      }
+
+      .qr-image-wrap {
+        width: 100%;
+      }
+
+      .lightbox-nav {
+        width: 42px;
+        height: 58px;
+        font-size: 2rem;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .reveal-on-scroll {
+        opacity: 1;
+        transform: none;
+        transition: none;
+      }
+
+      .back-to-top,
+      .lightbox-nav {
+        transition: none;
+      }
+    }
+
 </style>
 </head>
 <body>
@@ -1040,6 +1188,16 @@
 <p>La primaria Alberto Fernández Ruiloba aporta una experiencia concreta dentro del proyecto institucional: sus grupos de 1.º, 2.º, 3.º y 4.º grado muestran distintas rutas para atender el mismo problema ambiental. Así, esta página funciona como una ventana de evidencias de una escuela participante dentro de una presentación más amplia de RespiraTech.</p>
 </article>
 </div>
+<article class="fair-card qr-showcase">
+<div>
+<span class="eyebrow">Acceso rápido</span>
+<h3>QR del sitio RespiraTech</h3>
+<p>Escanea este código para abrir la página durante la exposición. Puede colocarse en carteles, impresiones o en la mesa de presentación para que los visitantes entren al sitio desde su celular.</p>
+</div>
+<div class="qr-image-wrap qr-card">
+<img alt="Código QR del sitio RespiraTech" src="assets/institucion/qr-respiratech.png"/>
+</div>
+</article>
 <div class="fair-card" style="margin-top: 22px;">
 <h3>Sentido de la feria</h3>
 <div class="purpose-list">
@@ -1056,6 +1214,8 @@
 <div aria-hidden="true" class="lightbox" id="lightbox">
 <div class="lightbox-content">
 <button aria-label="Cerrar" class="lightbox-close" type="button">×</button>
+<button aria-label="Imagen anterior" class="lightbox-nav lightbox-prev" id="lightboxPrev" type="button">‹</button>
+<button aria-label="Imagen siguiente" class="lightbox-nav lightbox-next" id="lightboxNext" type="button">›</button>
 <div id="lightboxMedia"></div>
 <div class="lightbox-caption" id="lightboxCaption"></div>
 </div>
@@ -1072,6 +1232,7 @@
 <iframe class="doc-frame" id="docFrame" title="Vista de documento"></iframe>
 </div>
 </div>
+<button aria-label="Volver al inicio" class="back-to-top" id="backToTop" type="button">↑</button>
 <script>
     const projectCards = document.querySelectorAll('.project-card');
     const projectDetails = document.querySelectorAll('.project-detail');
@@ -1157,6 +1318,10 @@
     const lightboxMedia = document.getElementById('lightboxMedia');
     const lightboxCaption = document.getElementById('lightboxCaption');
     const closeLightbox = document.querySelector('.lightbox-close');
+    const lightboxPrev = document.getElementById('lightboxPrev');
+    const lightboxNext = document.getElementById('lightboxNext');
+    const lightboxItems = [];
+    let lightboxCurrentIndex = -1;
 
     const docViewer = document.getElementById('docViewer');
     const docFrame = document.getElementById('docFrame');
@@ -1191,9 +1356,17 @@
       return null;
     }
 
+    function registerLightboxItem(src, caption, type = 'image') {
+      const existingIndex = lightboxItems.findIndex(item => item.src === src && item.caption === caption);
+      if (existingIndex !== -1) return existingIndex;
+      lightboxItems.push({ src, caption, type });
+      return lightboxItems.length - 1;
+    }
+
     function createImageCard(path, caption) {
       const card = document.createElement('div');
       card.className = 'media-card';
+      card.tabIndex = 0;
 
       const img = document.createElement('img');
       img.src = path;
@@ -1204,7 +1377,17 @@
       label.className = 'media-caption';
       label.textContent = caption;
 
-      img.addEventListener('click', () => openLightbox(path, caption, 'image'));
+      const itemIndex = registerLightboxItem(path, caption, 'image');
+      const open = () => openLightboxAt(itemIndex);
+
+      card.addEventListener('click', open);
+      card.addEventListener('keydown', event => {
+        if (event.key === 'Enter' || event.key === ' ') {
+          event.preventDefault();
+          open();
+        }
+      });
+
       card.append(img, label);
       return card;
     }
@@ -1332,29 +1515,62 @@
       if (!grid.children.length) grid.classList.add('is-empty');
     }
 
-    function openLightbox(src, caption, type = 'image') {
+    function renderLightboxItem(item) {
       lightboxMedia.innerHTML = '';
-      if (type === 'video') {
+      if (item.type === 'video') {
         const video = document.createElement('video');
-        video.src = src;
+        video.src = item.src;
         video.controls = true;
         video.autoplay = true;
         lightboxMedia.appendChild(video);
       } else {
         const img = document.createElement('img');
-        img.src = src;
-        img.alt = caption;
+        img.src = item.src;
+        img.alt = item.caption;
         lightboxMedia.appendChild(img);
       }
-      lightboxCaption.textContent = caption;
+      lightboxCaption.textContent = item.caption;
+      updateLightboxControls();
+    }
+
+    function updateLightboxControls() {
+      const canNavigate = lightboxItems.length > 1 && lightboxCurrentIndex !== -1;
+      lightboxPrev.hidden = !canNavigate;
+      lightboxNext.hidden = !canNavigate;
+    }
+
+    function openLightboxAt(index) {
+      lightboxCurrentIndex = index;
+      renderLightboxItem(lightboxItems[index]);
       lightbox.classList.add('active');
       lightbox.setAttribute('aria-hidden', 'false');
+    }
+
+    function openLightbox(src, caption, type = 'image') {
+      const existingIndex = lightboxItems.findIndex(item => item.src === src);
+      if (existingIndex !== -1) {
+        openLightboxAt(existingIndex);
+        return;
+      }
+
+      lightboxCurrentIndex = -1;
+      renderLightboxItem({ src, caption, type });
+      lightbox.classList.add('active');
+      lightbox.setAttribute('aria-hidden', 'false');
+    }
+
+    function showLightboxOffset(offset) {
+      if (lightboxCurrentIndex === -1 || !lightboxItems.length) return;
+      lightboxCurrentIndex = (lightboxCurrentIndex + offset + lightboxItems.length) % lightboxItems.length;
+      renderLightboxItem(lightboxItems[lightboxCurrentIndex]);
     }
 
     function closeViewer() {
       lightbox.classList.remove('active');
       lightbox.setAttribute('aria-hidden', 'true');
       lightboxMedia.innerHTML = '';
+      lightboxCurrentIndex = -1;
+      updateLightboxControls();
     }
 
     function openDocumentViewer(title, previewPath, downloadPath = previewPath) {
@@ -1382,6 +1598,15 @@
     });
 
     closeLightbox.addEventListener('click', closeViewer);
+    lightboxPrev.addEventListener('click', (event) => {
+      event.stopPropagation();
+      showLightboxOffset(-1);
+    });
+    lightboxNext.addEventListener('click', (event) => {
+      event.stopPropagation();
+      showLightboxOffset(1);
+    });
+
     lightbox.addEventListener('click', (event) => {
       if (event.target === lightbox) closeViewer();
     });
@@ -1396,7 +1621,45 @@
         closeViewer();
         closeDocumentViewer();
       }
+
+      if (lightbox.classList.contains('active')) {
+        if (event.key === 'ArrowLeft') showLightboxOffset(-1);
+        if (event.key === 'ArrowRight') showLightboxOffset(1);
+      }
     });
+
+    document.querySelectorAll('.qr-card img').forEach(img => {
+      img.addEventListener('error', () => {
+        const card = img.closest('.qr-card');
+        const showcase = img.closest('.qr-showcase');
+        if (showcase) showcase.remove();
+        else if (card) card.remove();
+      });
+    });
+
+    const backToTop = document.getElementById('backToTop');
+    backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+    window.addEventListener('scroll', () => {
+      backToTop.classList.toggle('visible', window.scrollY > 600);
+    });
+
+    const revealTargets = document.querySelectorAll('section, .stat-card, .method-card, .project-card, .doc-card, .fair-card, .normal-token, .normal-logo-card, .normal-title-panel');
+    revealTargets.forEach(target => target.classList.add('reveal-on-scroll'));
+
+    if ('IntersectionObserver' in window) {
+      const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+      revealTargets.forEach(target => revealObserver.observe(target));
+    } else {
+      revealTargets.forEach(target => target.classList.add('is-visible'));
+    }
 
     renderGalleries();
     renderEvidenceGrid();
